@@ -2,6 +2,7 @@
 
 .DropDownMenuContainer {
     position: relative;
+    
   }
   
   .menu {
@@ -10,7 +11,7 @@
     position: absolute;
     top: 60px;
     right: 5px;
-    width: 300px;
+    width: 25%;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;

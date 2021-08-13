@@ -1,0 +1,24 @@
+.story-container {
+    margin: 5vh 3vh 3vh 0;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1.5fr .5fr 2fr;
+    grid-template-rows: 1;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:active {
+    text-decoration: underline;
+}
