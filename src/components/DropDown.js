@@ -25,6 +25,7 @@ const DropDown = ({ selectType }) => {
         }
     }, [isActive])
 
+    const categories = ["Arts", "Automobiles", "Books", "Business", "Fashion", "Food", "Health", "Home", "Insider", "Magazine", "Movies", "Nyregion", "Obituaries", "Opinion","Politics", "Realestate", "Science", "Sports", "Sundayreview", "Technology", "Theater", "T-magazine", "Travel", "Upshot", "US", "World"]
     return (
         <div className="DropDown-MenuContainer">
             <button onClick={onClick} className="triggerButton">
@@ -35,51 +36,14 @@ const DropDown = ({ selectType }) => {
             className={`menu ${isActive ? "active" : "inactive"}`}
             >
                 <ul>
+                    {categories.map((category) => {
+                        return (
                     <li className="grow" onClick={selectType}>
-                        <a href="#">US</a>
+                        <a href="#">{category}</a>
                     </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">World</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Upshot</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Arts</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Books</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Business</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Food</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Health</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Home</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Movies</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Opinion</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Science</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Sports</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Technology</a>
-                    </li>
-                    <li className="grow" onClick={selectType}>
-                        <a href="#">Travel</a>
-                    </li>
+                        )
+                    })}
+                   
                 </ul>
             </nav>
         </div>
