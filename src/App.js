@@ -1,7 +1,7 @@
 import './App.css';
 import Header from "./components/Header"
 import HQ from "./components/HQ"
-import News from "./components/News"
+
 
 
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <HQ />
-      <News />
+    
     </div>
   );
 }

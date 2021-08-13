@@ -1,3 +1,31 @@
+.news-widgit {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 30%;
+    float: left;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.hide-button {
+    background: black;
+    color: white;
+    border-radius: 90px;
+    cursor: pointer;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 4px 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: none;
+    vertical-align: middle;
+    transition: box-shadow 0.4s ease;
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: 18px;
+    margin: 0 10px;
+    
+}
 .story-container {
     margin: 5vh 3vh 3vh 0;
     padding: 10px;
