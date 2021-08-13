@@ -4,7 +4,6 @@ import HQ from "./components/HQ"
 import News from "./components/News"
 
 
-console.log(process.env.REACT_APP_API_KEY)
 
 function App() {
   return (
