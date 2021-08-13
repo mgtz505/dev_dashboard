@@ -36,9 +36,9 @@ const News = () => {
         return (
           <div key={index} className="story-container">
             <h3 className="story-title">{story.title}</h3>
-            <img alt="storyimage" src={story.multimedia[2].url}/>
-            <h4 className="story-abstract">{story.abstract} | {story.byline}</h4>
-            <a className="story-link" target="_blank" href={story.short_url}>View on NYT</a>
+            {/* <img alt="story-image" src={story.multimedia[2].url}/> */}
+            <h4 className="story-abstract">{story.abstract}</h4>
+            <a className="story-link grow" target="_blank" href={story.short_url}>View on NYT</a>
           </div>
         );
       })}
