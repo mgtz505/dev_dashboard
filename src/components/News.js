@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import DropDown from "./DropDown";
 
 const News = () => {
   //Global Variables
@@ -8,7 +9,11 @@ const News = () => {
 
   //State
   const [stories, setStories] = useState([]);
-
+  const [type, setType] = useState("");
+  //Function to Call NYT API
+  
+  const selectType = (e) => setType(e.target.innerText);
+  let selector = type.toLowerCase();
   const getNews = () => {
     axios
       .get(URL)
@@ -20,12 +25,15 @@ const News = () => {
   };
   useEffect(() => {
     getNews();
-  }, []);
+  }, [type]);
+
+
+
 
   return (
     <div>
       <h2>See Today's Top News from the NYT</h2>
-
+        <DropDown selectType={selectType}/>
       {stories.map((story, index) => {
         return (
           <div key={index} className="story-container">
