@@ -93,7 +93,7 @@ const handleComplete = (index) => {
     setTodos(newTodos);
 }
     return (
-        <div className="todo-widgit">
+        <div className="widgit">
             <h2>Tasks to Complete</h2>
             <Count count={count}/>
             {todos.map((todo, index) => {

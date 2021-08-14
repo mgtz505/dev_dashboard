@@ -30,7 +30,7 @@ const News = () => {
 
   return (
       <>
-    <div className = "news-widgit">
+    <div className = "widgit">
       <h2>See Today's Top News from the NYT</h2>
         <DropDown selectType={selectType}/>
     <button className = "hide-button" onClick={() => setStories([]) }>Hide Content</button>

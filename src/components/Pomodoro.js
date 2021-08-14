@@ -34,7 +34,7 @@ useEffect(() => {
     }, [seconds]);
 
     return (
-        <div className="pomodoro-widgit">
+        <div className="widgit">
             <div className="timer-body">
             <h2>Pomodoro Timer</h2>
                 <div className="message-body">
