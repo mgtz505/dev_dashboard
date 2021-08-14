@@ -9,15 +9,35 @@ const [todos, setTodos] = useState([
 ]);
 
 const Todo = () => {
-    
+
+
+    const handleComplete = (index) => {
+        const newTodos = [...todos];
+        let target = newTodos[index];
+        if (target.isComplete === false) {
+            target.isComplete = true
+        } else {
+            if (target.isComplete === true) {
+                target.isComplete = false
+            }
+        }
+        setTodos(newTodos);
+    }
+
     return (
         <div className="todo-container">
             {todos.map((todo, index) => {
 
                 return (  
-                <div className="todo-entry">
+                <div 
+                className="todo-entry"
+                style={{textDecoration: todo.isComplete ? "line-through" : ""}}>
                     <h2 key={index}>{todo.text}</h2>
-                </div>)
+                    <div className="control-panel">
+                        <button onClick={() => handleComplete(index)}>✔️ </button>
+                    </div>
+                </div>
+                )
               
             })}
         </div>
