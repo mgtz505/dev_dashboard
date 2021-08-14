@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from "axios";
-// import { set } from 'immer/dist/internal';
+import "../styles/motivation.css"
 
 const Motivation = () => {
     const [photo, setPhoto] = useState();
@@ -12,9 +12,8 @@ const URL_QUOTE = "https://type.fit/api/quotes";
 const handleRequest = useCallback(() => {
     setPhoto();
     getPhoto();
-    // setQuote([]);
     getQuote();
-})
+}, [])
 
 const getPhoto = () => {
     axios.get(URL_PHOTO)
@@ -41,12 +40,12 @@ console.log(quote)
     return (
         <div className="widgit">
             <h2>Get Motivated</h2>
-            <button onClick={() => handleRequest()}>🌟</button> 
             <img className="motivation-image" alt="motivationalPhoto" src={photo}/>
             {quote ? (<div className="quote-container">
                 <h3>{quote[0]}</h3>
                 <h4>-{quote[1]}</h4>
             </div>) : null }
+            <button className="reload-button" onClick={() => handleRequest()}>🌟</button> 
         </div>
     );
 };

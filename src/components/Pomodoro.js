@@ -7,7 +7,7 @@ const [seconds, setSeconds] = useState(0);
 const [message, setMessage] = useState(false);
 
 const timerMinutes = minutes < 10 ? `0:${minutes}` : minutes;
-const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
+const timerSeconds = seconds < 10 ? `0:${seconds}` : seconds;
 
 
 
