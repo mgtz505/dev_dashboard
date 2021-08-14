@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
 
-const Todo = ({ todo, index, handleComplete, handleDelete }) => {
+const Count = ({ count }) => {
+    return (
+        <div className="count-container">
+            {count ? 
+            (count === 1 ? <h4>{count} task remaining</h4> : <h4>{count} tasks remaining</h4> )
+            : <h4>No Tasks Remaining</h4>}
 
+        </div>
+    )
+}
+
+const Todo = ({ todo, index, handleComplete, handleDelete }) => {
     return (
         <div className="todo-container">
-    
                 <div 
                 className="todo-entry"
-                style={{textDecoration: todo.isComplete ? "line-through" : ""}}>
+                style={{textDecoration: todo.isComplete ? "line-through" : ""}}
+                >
                     <h2 key={index}>{todo.text}</h2>
                     <div className="control-panel">
                         <button onClick={() => handleComplete(index)}>✔️</button>
                         <button onClick={() => handleDelete(index)}>🗑</button>
                     </div>
                 </div>
-           
         </div>
     )
 }
@@ -51,16 +60,17 @@ const [todos, setTodos] = useState([
     // {text: "EXAMPLE TASK C", isComplete: false},
     // {text: "EXAMPLE TASK D", isComplete: false},
 ]);
-
+const [count, setCount] = useState(0);
 const addTodo = (text, isComplete = false) => {
     const newTodos = [...todos, { text, isComplete}];
     setTodos(newTodos);
+    setCount(newTodos.length);
 }
-
 const handleDelete = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index,1);
     setTodos(newTodos);
+    setCount(newTodos.length)
 }
 
 const handleComplete = (index) => {
@@ -78,7 +88,9 @@ const handleComplete = (index) => {
     setTodos(newTodos);
 }
     return (
-        <div>
+        <div className="todo-widgit">
+            <h2>Tasks to Complete</h2>
+            <Count count={count}/>
             {todos.map((todo, index) => {
                 return (
                     <Todo
