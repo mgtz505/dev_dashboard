@@ -46,14 +46,14 @@ const handleSubmit = (e) => {
 }
 const List = () => {
 const [todos, setTodos] = useState([
-    {text: "EXAMPLE TASK A", isComplete: false},
-    {text: "EXAMPLE TASK B", isComplete: false},
-    {text: "EXAMPLE TASK C", isComplete: false},
-    {text: "EXAMPLE TASK D", isComplete: false},
+    // {text: "EXAMPLE TASK A", isComplete: false},
+    // {text: "EXAMPLE TASK B", isComplete: false},
+    // {text: "EXAMPLE TASK C", isComplete: false},
+    // {text: "EXAMPLE TASK D", isComplete: false},
 ]);
 
-const addTodo = (text) => {
-    const newTodos = [...todos, { text }];
+const addTodo = (text, isComplete = false) => {
+    const newTodos = [...todos, { text, isComplete}];
     setTodos(newTodos);
 }
 
