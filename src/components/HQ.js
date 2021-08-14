@@ -2,6 +2,7 @@ import React from 'react';
 import News from "./News";
 import Pomodoro from "./Pomodoro";
 import List from "./List";
+import Motivation from "./Motivation";
 
 
 const HQ = () => {
@@ -11,6 +12,7 @@ const HQ = () => {
             <Pomodoro />
             <News />
             <List />
+            <Motivation />
         </div>
     );
 };
