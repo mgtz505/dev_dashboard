@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 
-const Todo = () => {
+const List = () => {
 const [todos, setTodos] = useState([
-    {text: "EXAMPLE TASK A"},
-    {text: "EXAMPLE TASK B"},
-    {text: "EXAMPLE TASK C"},
-    {text: "EXAMPLE TASK D"},
+    {text: "EXAMPLE TASK A", isComplete: false},
+    {text: "EXAMPLE TASK B", isComplete: false},
+    {text: "EXAMPLE TASK C", isComplete: false},
+    {text: "EXAMPLE TASK D", isComplete: false},
 ]);
-const [value, setValue] = useState("");
 
 const Todo = () => {
     
@@ -25,13 +24,29 @@ const Todo = () => {
     )
 }
 
-const todoForm = () => {
+const TodoForm = () => {
+    const [value, setValue] = useState("");
+
+const addTodo = (text) => {
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
+}
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!value) return;
+    addTodo(value);
+    setValue("");
+}
 
     return (
         <div className="todo-form">
-            <form>
+            <form
+            onSubmit={handleSubmit}>
                 <input 
                 type="text"
+                placeholder="New Task..."
+                value={value}
                 onChange={(e) => setValue(e.target.value)}
                 >
                 </input>
@@ -43,8 +58,9 @@ const todoForm = () => {
     return (
         <div>
             <Todo />
+            <TodoForm />
         </div>
     );
 };
 
-export default Todo;
+export default List;
