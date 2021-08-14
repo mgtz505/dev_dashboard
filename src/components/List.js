@@ -11,14 +11,15 @@ const Count = ({ count }) => {
     )
 }
 
-const Todo = ({ todo, index, handleComplete, handleDelete }) => {
+const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
     return (
         <div className="todo-container">
                 <div 
                 className="todo-entry"
                 style={{textDecoration: todo.isComplete ? "line-through" : ""}}
                 >
-                    <h2 key={index}>{todo.text}</h2>
+                   
+                    <h2 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h2>
                     <div className="control-panel">
                         <button onClick={() => handleComplete(index)}>✔️</button>
                         <button onClick={() => handleDelete(index)}>🗑</button>
@@ -61,6 +62,8 @@ const [todos, setTodos] = useState([
     // {text: "EXAMPLE TASK D", isComplete: false},
 ]);
 const [count, setCount] = useState(0);
+const [displayIndex, setDisplayIndex] = useState(false);
+
 const addTodo = (text, isComplete = false) => {
     const newTodos = [...todos, { text, isComplete}];
     setTodos(newTodos);
@@ -97,11 +100,13 @@ const handleComplete = (index) => {
                     index={index}
                     todo={todo}
                     handleComplete={handleComplete}
-                    handleDelete={handleDelete} />
+                    handleDelete={handleDelete}
+                    displayIndex={displayIndex} />
                 )
             })}
             <TodoForm
             addTodo={addTodo} />
+            <button onClick={() => setDisplayIndex(!displayIndex)}>Show Numerical Headers</button>
         </div>
     );
 };
