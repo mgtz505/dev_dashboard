@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../styles/list.css";
 
 const Count = ({ count }) => {
     return (
@@ -21,8 +22,8 @@ const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
                    
                     <h2 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h2>
                     <div className="control-panel">
-                        <button onClick={() => handleComplete(index)}>✔️</button>
-                        <button onClick={() => handleDelete(index)}>🗑</button>
+                        <button className="function-button" onClick={() => handleComplete(index)}>✔️</button>
+                        <button className="function-button" onClick={() => handleDelete(index)}>🗑</button>
                     </div>
                 </div>
         </div>
@@ -43,7 +44,8 @@ const handleSubmit = (e) => {
         <div className="todo-form">
             <form
             onSubmit={handleSubmit}>
-                <input 
+                <input
+                className="todo-input" 
                 type="text"
                 placeholder="New Task..."
                 value={value}
@@ -106,7 +108,7 @@ const handleComplete = (index) => {
             })}
             <TodoForm
             addTodo={addTodo} />
-            <button onClick={() => setDisplayIndex(!displayIndex)}>Show Numerical Headers</button>
+            <button className="control-button" onClick={() => setDisplayIndex(!displayIndex)}>Show Numerical Headers</button>
         </div>
     );
 };
