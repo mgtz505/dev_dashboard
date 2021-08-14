@@ -7,28 +7,32 @@ const Motivation = () => {
     const [quote, setQuote] = useState([]);
 
 const URL_PHOTO = "https://picsum.photos/300/200.jpg";
-const URL_QUOTE = "https://quote-garden.herokuapp.com/api/v3/quotes";
+const URL_QUOTE = "https://type.fit/api/quotes";
 
 const handleRequest = useCallback(() => {
     setPhoto();
     getPhoto();
-    // setQuote();
+    // setQuote([]);
     getQuote();
-},[photo, quote])
+})
 
 const getPhoto = () => {
     axios.get(URL_PHOTO)
     .then((response) => {
-        console.log(response.config.url);
+        console.log(response)
         setPhoto(response.config.url); 
     })
 }
 const getQuote = () => {
+    setQuote([])
     axios.get(URL_QUOTE)
     .then((response) => {
-        let text = (response.data.data[0].quoteText);
-        let author = (response.data.data[0].quoteAuthor);
-        setQuote([text,author])
+        console.log(response)
+        let quoteArray = response.data
+        let randomNum = Math.floor(Math.random() * response.data.length)
+        let text = quoteArray[randomNum].text
+        let author = quoteArray[randomNum].author
+        setQuote([text,author]);
     })
 }
 
@@ -37,10 +41,12 @@ console.log(quote)
     return (
         <div className="widgit">
             <h2>Get Motivated</h2>
-            <button onClick={() => handleRequest()}>X</button> 
+            <button onClick={() => handleRequest()}>🌟</button> 
             <img className="motivation-image" alt="motivationalPhoto" src={photo}/>
-            <h3>{quote[0]}</h3>
-            <h4>-{quote[1]}</h4>
+            {quote ? (<div className="quote-container">
+                <h3>{quote[0]}</h3>
+                <h4>-{quote[1]}</h4>
+            </div>) : null }
         </div>
     );
 };
