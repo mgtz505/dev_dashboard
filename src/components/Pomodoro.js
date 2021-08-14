@@ -9,6 +9,8 @@ const [message, setMessage] = useState(false);
 const timerMinutes = minutes < 10 ? `0:${minutes}` : minutes;
 const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
+
+
 useEffect(() => {
     let interval = setInterval(() => {
         clearInterval(interval)
@@ -16,7 +18,7 @@ useEffect(() => {
         if (seconds === 0) {
           if (minutes !== 0) {
             setSeconds(59);
-            setMinutes(minutes -1);
+            setMinutes(minutes - 1);
           } else {
             let minutes = message ? 24 : 4
             let seconds = 59
@@ -39,7 +41,11 @@ useEffect(() => {
                     {message && <div>Break! Resume in:</div>}
                 </div>
                 <div className="timer-body">
-                {timerMinutes}:{timerSeconds}
+                    <h3>{timerMinutes}:{timerSeconds}</h3>
+                </div>
+                <div className="control-panel">
+                    <button 
+                    className="control-button">Reset Timer</button>
                 </div>
             </div>
         </div>
