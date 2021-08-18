@@ -12,7 +12,9 @@ const URL_QUOTE = "https://type.fit/api/quotes";
 const handleRequest = useCallback(() => {
     setPhoto();
     getPhoto();
+    setTimeout(() => {
     getQuote();
+    }, 500)
 }, [])
 
 const getPhoto = () => {

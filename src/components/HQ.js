@@ -1,10 +1,11 @@
 import React from 'react';
+import "../styles/hq.css";
 import News from "./News";
 import Pomodoro from "./Pomodoro";
 import List from "./List";
 import Motivation from "./Motivation";
 import Editor from "./Editor";
-
+import Github from "./GitHub";
 
 
 const HQ = () => {
@@ -16,6 +17,7 @@ const HQ = () => {
             <List />
             <Motivation />
             <Editor />
+            <Github />
              
            
         </div>
