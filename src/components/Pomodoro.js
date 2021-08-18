@@ -6,8 +6,8 @@ const [minutes, setMinutes] = useState(25);
 const [seconds, setSeconds] = useState(0);
 const [message, setMessage] = useState(false);
 
-const timerMinutes = minutes < 10 ? `0:${minutes}` : minutes;
-const timerSeconds = seconds < 10 ? `0:${seconds}` : seconds;
+const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
+const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
 
 
@@ -31,14 +31,14 @@ useEffect(() => {
          setSeconds(seconds - 1);
         }
       }, 1000)
-    }, [seconds]);
+    }, );
 
     return (
         <div className="widgit">
             <div className="timer-body">
             <h2>Pomodoro Timer</h2>
                 <div className="message-body">
-                    {message && <div>Break! Resume in:</div>}
+                    {message && <h3>Break! Resume in:</h3>}
                 </div>
                 <div className="timer-body">
                     <h3>{timerMinutes}:{timerSeconds}</h3>
