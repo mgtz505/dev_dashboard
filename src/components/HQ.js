@@ -6,6 +6,7 @@ import Motivation from "./Motivation";
 import Editor from "./Editor";
 
 
+
 const HQ = () => {
     return (
         <div className="widgit-grid">
@@ -15,6 +16,8 @@ const HQ = () => {
             <List />
             <Motivation />
             <Editor />
+             
+           
         </div>
     );
 };
