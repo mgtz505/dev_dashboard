@@ -3,6 +3,7 @@ import News from "./News";
 import Pomodoro from "./Pomodoro";
 import List from "./List";
 import Motivation from "./Motivation";
+import Editor from "./Editor";
 
 
 const HQ = () => {
@@ -13,6 +14,7 @@ const HQ = () => {
             <News />
             <List />
             <Motivation />
+            <Editor />
         </div>
     );
 };
