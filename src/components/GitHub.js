@@ -1,12 +1,12 @@
 import React, { useState ,useEffect } from 'react';
-// import axios from "axios";
 import { Octokit } from "@octokit/core"
+import { DomHandler } from 'htmlparser2';
 
 // const URL = "https://api.github.com/users/mgtz505";
 const KEY = process.env.REACT_APP_GH_KEY;
 
 const GitHub = () => {
-    const[ghData, setGhData] = useState()
+    
     const [repoName, setRepoName] = useState("")
     const [commits, setCommits] = useState([]);
     const octokit = new Octokit({auth: KEY })
@@ -25,18 +25,19 @@ const GitHub = () => {
 
     },[])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(!repoName)return
+        setRepoName(e.target.value)
+        
+    }
+
     console.log(commits)
-    // const getGitHubData = () => {
-    //     axios.get(URL)
-    //     .then((response => {
-    //         console.log(response);
-    //         setGhData(response.data)
-    //     }))
-    // }
 
     return (
         <div className="widgit">
             <h2>GitHub Commit Buddy</h2>
+            <h3>{repoName}</h3>
            
             {/* {commits ? <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a> : null} */}
             <ul>
@@ -51,6 +52,17 @@ const GitHub = () => {
                 </>
                ))}
             </ul>
+            <form
+            onSubmit={handleSubmit}
+            type="submit">
+                <input 
+                placeholder="Repo Name"
+                type="text"
+                value={repoName}
+                onChange={(e => setRepoName(e.target.value))}
+                >
+                </input>
+            </form>
         </div>
     );
 };
