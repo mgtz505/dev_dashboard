@@ -7,6 +7,7 @@ const KEY = process.env.REACT_APP_GH_KEY;
 const GitHub = () => {
     const [callAPI, setCallAPI] = useState(false);
     const [repoName, setRepoName] = useState("");
+    const [displayName, setDisplayName] = useState("");
     const [commits, setCommits] = useState([]);
     const octokit = new Octokit({auth: KEY });
 
@@ -15,7 +16,7 @@ const GitHub = () => {
         console.log("This is the repoName:", repoName)
         const repo = repoName
         console.log("This is the repo variable:", repo)
-        const perPage = 5;
+        const perPage = 10;
         
         if(repoName && callAPI){
 
@@ -24,6 +25,10 @@ const GitHub = () => {
                 ).then((response) => {
                     console.log(response.data)
                     setCommits(response.data);
+                    setCallAPI(false);
+                    setDisplayName(repoName);
+                    setRepoName("");
+                    
                 });
         }
     },[callAPI])
@@ -31,8 +36,8 @@ const GitHub = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!repoName)return
-        setCallAPI(!callAPI);
-        // setCallAPI(false);
+        setCallAPI(true);
+        // setRepoName("")
     }
 
     const formatDate = (str) => {
@@ -45,6 +50,7 @@ const GitHub = () => {
     // console.log(commits)
     // console.log(repoName)
     // console.log(callAPI)
+    console.log(displayName);
 
     return (
         <div className="widgit">
@@ -52,7 +58,20 @@ const GitHub = () => {
             {/* <h3>{repoName}</h3> */}
            
             {/* {commits ? <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a> : null} */}
-                {callAPI && repoName ? <h4>Commits for {repoName}</h4> : null }
+            <div className="input-field">
+                <form
+                onSubmit={handleSubmit}
+                type="submit">
+                    <input 
+                    placeholder="Type Repo Name..."
+                    type="text"
+                    value={repoName}
+                    onChange={(e => setRepoName(e.target.value))}
+                    >
+                    </input>
+                </form>
+            </div>
+                {commits.length > 1 && displayName ? <h4>10 Most Recent Commits for {displayName}</h4> : null }
             <ul className="commit-list">
                <div>
                {commits.map(commit => (
@@ -68,17 +87,6 @@ const GitHub = () => {
                ))}
                </div>
             </ul>
-            <form
-            onSubmit={handleSubmit}
-            type="submit">
-                <input 
-                placeholder="Repo Name"
-                type="text"
-                value={repoName}
-                onChange={(e => setRepoName(e.target.value))}
-                >
-                </input>
-            </form>
         </div>
     );
 };
