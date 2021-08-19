@@ -62,7 +62,8 @@ const GitHub = () => {
                 <form
                 onSubmit={handleSubmit}
                 type="submit">
-                    <input 
+                    <input
+                    className = "repo-input" 
                     placeholder="Type Repo Name..."
                     type="text"
                     value={repoName}

@@ -42,12 +42,14 @@ console.log(quote)
     return (
         <div className="widgit">
             <h2>Get Motivated</h2>
+            <div className="content">
             <img className="motivation-image" onError={e => e.target.style.display = 'none'} src={photo}/>
             {quote.length > 1 ? (<div className="quote-container">
                 <h3>{quote[0]}</h3>
-                <h4>-{quote[1]}</h4>
+                <h4>{quote[1]}</h4>
             </div>) : null }
             <button className="function-button" onClick={() => handleRequest()}>🌟</button> 
+            </div>
         </div>
     );
 };

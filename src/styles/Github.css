@@ -24,3 +24,11 @@ line-height: 1;
 .commit-list {
     margin-top: 2vh;
 }
+
+.repo-input {
+    border: 2px solid orange;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: px;
+}
