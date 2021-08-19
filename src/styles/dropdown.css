@@ -7,11 +7,12 @@
   
   .menu {
     background: #ffffff;
+    /* opacity: 0.33; */
     border-radius: 8px;
     position: absolute;
     top: 60px;
     right: 5px;
-    width: 25%;
+    width: 35%;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;

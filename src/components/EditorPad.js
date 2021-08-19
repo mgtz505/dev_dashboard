@@ -21,7 +21,7 @@ const EditorPad = (props) => {
 
     return (
         <div className="widgit">
-            <h2>Text Editor</h2>
+            <h2>Scratchpad</h2>
             <div className="editor-container">
                 <div className="editor-title">
                     <h4>{displayName}</h4>

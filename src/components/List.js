@@ -96,6 +96,8 @@ const handleComplete = (index) => {
         <div className="widgit">
             <h2>Tasks to Complete</h2>
             <Count count={count}/>
+            <TodoForm
+            addTodo={addTodo} />
             {todos.map((todo, index) => {
                 return (
                     <Todo
@@ -106,8 +108,6 @@ const handleComplete = (index) => {
                     displayIndex={displayIndex} />
                 )
             })}
-            <TodoForm
-            addTodo={addTodo} />
             <button className="function-button" onClick={() => setDisplayIndex(!displayIndex)}>🔢 </button>
         </div>
     );
