@@ -1,0 +1,26 @@
+ul {
+    list-style: none;
+}
+.commit-card {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 2fr 1fr 1fr;
+align-content: center;
+padding: 5px;    
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+border-radius: 5px;
+transition: 0.3s;
+width: 90%;
+overflow: auto;
+height: 22vh;  
+margin-top: 2vh;
+line-height: 1;  
+}
+
+.commit-text {
+    margin-top: 4vh;
+}
+
+.commit-list {
+    margin-top: 2vh;
+}

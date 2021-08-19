@@ -1,8 +1,7 @@
 import React, { useState ,useEffect } from 'react';
-import { Octokit } from "@octokit/core"
-import { DomHandler } from 'htmlparser2';
+import { Octokit } from "@octokit/core";
+import "../styles/Github.css";
 
-// const URL = "https://api.github.com/users/mgtz505";
 const KEY = process.env.REACT_APP_GH_KEY;
 
 const GitHub = () => {
@@ -36,6 +35,13 @@ const GitHub = () => {
         // setCallAPI(false);
     }
 
+    const formatDate = (str) => {
+    let pivot = str.indexOf("T")
+    let end = str.indexOf("Z")
+    const date = str.slice(0,pivot)
+    const time = str.slice(pivot + 1,end)
+    return [date,time]
+    }
     // console.log(commits)
     // console.log(repoName)
     // console.log(callAPI)
@@ -43,20 +49,24 @@ const GitHub = () => {
     return (
         <div className="widgit">
             <h2>GitHub Commit Buddy</h2>
-            <h3>{repoName}</h3>
+            {/* <h3>{repoName}</h3> */}
            
             {/* {commits ? <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a> : null} */}
-            <ul>
                 {callAPI && repoName ? <h4>Commits for {repoName}</h4> : null }
+            <ul className="commit-list">
+               <div>
                {commits.map(commit => (
                    <div className="commit-card">
                    <li key={commit.id}>
-                       {commit.author.login}: {commit.commit.message}
-                    </li>
+                       <p className="commit-text">{commit.author.login}: {commit.commit.message}</p>
                        
-                       <a target="blank" href={commit.parents[0].html_url}>Link</a>
+                       <h5>Commit Date: {formatDate(commit.commit.author.date)[0]}</h5>
+                       <h5>Commit Time: {formatDate(commit.commit.author.date)[1]}</h5>
+                       <a target="blank" href={commit.parents[0].html_url}>See Commit</a>
+                    </li>
                 </div>
                ))}
+               </div>
             </ul>
             <form
             onSubmit={handleSubmit}
