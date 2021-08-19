@@ -38,13 +38,16 @@ const GitHub = () => {
         <div className="widgit">
             <h2>GitHub</h2>
             <button onClick={() => getGitHubData()}>Get GH Data</button>
+            <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a>
             <ul>
+                <h4>Commits For </h4>
                {commits.map(commit => (
                    <>
                    <li key={commit.id}>
                        {commit.author.login}: {commit.commit.message}
                     </li>
-                       <h5>{commit.commit.url}</h5>
+                       
+                       <a target="blank" href={commit.parents[0].html_url}>Link</a>
                 </>
                ))}
             </ul>
