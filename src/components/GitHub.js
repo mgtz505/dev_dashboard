@@ -6,33 +6,39 @@ import { DomHandler } from 'htmlparser2';
 const KEY = process.env.REACT_APP_GH_KEY;
 
 const GitHub = () => {
-    
-    const [repoName, setRepoName] = useState("")
+    const [callAPI, setCallAPI] = useState(false);
+    const [repoName, setRepoName] = useState("");
     const [commits, setCommits] = useState([]);
-    const octokit = new Octokit({auth: KEY })
+    const octokit = new Octokit({auth: KEY });
 
     useEffect(() => {
         const owner = "mgtz505"
-        const repo = "project_euler"
+        console.log("This is the repoName:", repoName)
+        const repo = repoName
+        console.log("This is the repo variable:", repo)
         const perPage = 5;
+        
+        if(repoName && callAPI){
 
-        const fiveMostRecentCommits = octokit.request(
-            `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
-            ).then((response) => {
-                console.log(response.data)
-                setCommits(response.data);
-            });
-
-    },[])
+            const fiveMostRecentCommits = octokit.request(
+                `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
+                ).then((response) => {
+                    console.log(response.data)
+                    setCommits(response.data);
+                });
+        }
+    },[callAPI])
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!repoName)return
-        setRepoName(e.target.value)
-        
+        setCallAPI(!callAPI);
+        // setCallAPI(false);
     }
 
     console.log(commits)
+    console.log(repoName)
+    console.log(callAPI)
 
     return (
         <div className="widgit">
