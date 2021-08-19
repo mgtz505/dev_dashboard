@@ -10,17 +10,17 @@ import Github from "./GitHub";
 
 const HQ = () => {
     return (
+        <>
+        <h2>What are we going to build Today?</h2>
         <div className="widgit-grid">
-            <h2>What are we going to build Today?</h2>
             <Pomodoro />
             <News />
             <List />
             <Motivation />
             <Editor />
             <Github />
-             
-           
         </div>
+        </>
     );
 };
 

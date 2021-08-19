@@ -33,7 +33,7 @@ const News = () => {
     <div className = "widgit">
       <h2>See Today's Top News from the NYT</h2>
         <DropDown selectType={selectType}/>
-    <button className = "hide-button" onClick={() => setStories([]) }>Hide Content</button>
+    <button className = "function-button" onClick={() => setStories([]) }>🚫</button>
     </div>
       {stories.map((story, index) => {
         return (

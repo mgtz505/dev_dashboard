@@ -45,7 +45,7 @@ useEffect(() => {
                 </div>
                 <div className="control-panel">
                     <button 
-                    className="control-button">Reset Timer</button>
+                    className="function-button">🔄</button>
                 </div>
             </div>
         </div>

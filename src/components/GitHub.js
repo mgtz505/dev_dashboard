@@ -70,7 +70,7 @@ const GitHub = () => {
                     >
                     </input>
                 </form>
-                <button onClick={() => setCallAPI(true)}>Refresh Commits</button>
+                <button className="function-button" onClick={() => setCallAPI(true)}>🔄</button>
             </div>
                 {commits.length > 1 && displayName ? <h4>10 Most Recent Commits for {displayName}</h4> : null }
             <ul className="commit-list">

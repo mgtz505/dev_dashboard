@@ -47,7 +47,7 @@ console.log(quote)
                 <h3>{quote[0]}</h3>
                 <h4>-{quote[1]}</h4>
             </div>) : null }
-            <button className="reload-button" onClick={() => handleRequest()}>🌟</button> 
+            <button className="function-button" onClick={() => handleRequest()}>🌟</button> 
         </div>
     );
 };

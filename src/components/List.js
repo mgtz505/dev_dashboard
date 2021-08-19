@@ -108,7 +108,7 @@ const handleComplete = (index) => {
             })}
             <TodoForm
             addTodo={addTodo} />
-            <button className="control-button" onClick={() => setDisplayIndex(!displayIndex)}>Show Numerical Headers</button>
+            <button className="function-button" onClick={() => setDisplayIndex(!displayIndex)}>🔢 </button>
         </div>
     );
 };
