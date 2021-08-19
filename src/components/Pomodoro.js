@@ -11,11 +11,15 @@ const [paused, setPaused] = useState(false);
 const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
 const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
 
-
+const handleReset = () => {
+  setMinutes(currMin => currMin = 25);
+  setSeconds(currSec => currSec = 0);
+}
 
 useEffect(() => {
     let interval = setInterval(() => {
         clearInterval(interval)
+        
         if (!paused){
 
         if (seconds === 0) {
@@ -48,8 +52,9 @@ useEffect(() => {
                     <h3 style={{color: paused ? "blue" : null}}>{timerMinutes}:{timerSeconds}</h3>
                 </div>
                 <div className="control-panel">
-                    <button 
-                    className="function-button">🔄</button>
+                    {paused ? <button
+                    onClick={() => handleReset()} 
+                    className="function-button">🔄</button> : null}
                     <button onClick={() => setPaused(!paused)}className="function-button">⏯️</button>
                 </div>
             </div>
