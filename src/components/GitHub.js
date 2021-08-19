@@ -36,9 +36,9 @@ const GitHub = () => {
         // setCallAPI(false);
     }
 
-    console.log(commits)
-    console.log(repoName)
-    console.log(callAPI)
+    // console.log(commits)
+    // console.log(repoName)
+    // console.log(callAPI)
 
     return (
         <div className="widgit">
@@ -47,15 +47,15 @@ const GitHub = () => {
            
             {/* {commits ? <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a> : null} */}
             <ul>
-                <h4>Commits For </h4>
+                {callAPI && repoName ? <h4>Commits for {repoName}</h4> : null }
                {commits.map(commit => (
-                   <>
+                   <div className="commit-card">
                    <li key={commit.id}>
                        {commit.author.login}: {commit.commit.message}
                     </li>
                        
                        <a target="blank" href={commit.parents[0].html_url}>Link</a>
-                </>
+                </div>
                ))}
             </ul>
             <form
