@@ -1,13 +1,13 @@
 import React, { useState ,useEffect } from 'react';
-import axios from "axios";
+// import axios from "axios";
 import { Octokit } from "@octokit/core"
 
-const URL = "https://api.github.com/users/mgtz505";
+// const URL = "https://api.github.com/users/mgtz505";
 const KEY = process.env.REACT_APP_GH_KEY;
 
 const GitHub = () => {
     const[ghData, setGhData] = useState()
-
+    const [repoName, setRepoName] = useState("")
     const [commits, setCommits] = useState([]);
     const octokit = new Octokit({auth: KEY })
 
@@ -26,19 +26,19 @@ const GitHub = () => {
     },[])
 
     console.log(commits)
-    const getGitHubData = () => {
-        axios.get(URL)
-        .then((response => {
-            console.log(response);
-            setGhData(response.data)
-        }))
-    }
+    // const getGitHubData = () => {
+    //     axios.get(URL)
+    //     .then((response => {
+    //         console.log(response);
+    //         setGhData(response.data)
+    //     }))
+    // }
 
     return (
         <div className="widgit">
-            <h2>GitHub</h2>
-            <button onClick={() => getGitHubData()}>Get GH Data</button>
-            <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a>
+            <h2>GitHub Commit Buddy</h2>
+           
+            {/* {commits ? <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a> : null} */}
             <ul>
                 <h4>Commits For </h4>
                {commits.map(commit => (
