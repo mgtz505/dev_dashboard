@@ -27,7 +27,7 @@ const GitHub = () => {
                     setCommits(response.data);
                     setCallAPI(false);
                     setDisplayName(repoName);
-                    setRepoName("");
+                    // setRepoName("");
                     
                 });
         }
