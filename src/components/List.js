@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import "../styles/list.css";
+import Count from "./Count";
 
-const Count = ({ count }) => {
-    return (
-        <div className="count-container">
-            {count ? 
-            (count === 1 ? <h4>{count} task remaining</h4> : <h4>{count} tasks remaining</h4> )
-            : <h4>No Tasks Remaining</h4>}
 
-        </div>
-    )
-}
 
 const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
     return (
@@ -18,8 +10,7 @@ const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
                 <div 
                 className="todo-entry"
                 style={{textDecoration: todo.isComplete ? "line-through" : ""}}
-                >
-                   
+                >               
                     <h2 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h2>
                     <div className="control-panel">
                         <button className="function-button" onClick={() => handleComplete(index)}>✔️</button>
