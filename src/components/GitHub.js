@@ -1,6 +1,7 @@
 import React, { useState ,useEffect } from 'react';
 import { Octokit } from "@octokit/core";
 import "../styles/Github.css";
+import formatDate from  "./formatDate";
 
 const KEY = process.env.REACT_APP_GH_KEY;
 
@@ -40,16 +41,16 @@ const GitHub = () => {
         // setRepoName("")
     }
 
-    const formatDate = (str) => {
-    let pivot = str.indexOf("T")
-    let end = str.indexOf("Z")
-    const date = str.slice(0,pivot)
-    const time = str.slice(pivot + 1,end)
-    return [date,time]
-    }
-    // console.log(commits)
-    // console.log(repoName)
-    // console.log(callAPI)
+    // const formatDate = (str) => {
+    // let pivot = str.indexOf("T")
+    // let end = str.indexOf("Z")
+    // const date = str.slice(0,pivot)
+    // const time = str.slice(pivot + 1,end)
+    // return [date,time]
+    // }
+    
+
+
     console.log(displayName);
 
     return (
