@@ -2,12 +2,12 @@
 import formatDate from "../components/formatDate.js";
 import expect from "expect"
 
-describe("formatDate", () => {
+describe("formatDate function", () => {
 
-    it("should format a date in the form '2021-08-20T15:37:01Z' to the form, ['2021-08-20', '15:37:01']", () => {
+    it("should modify a date's format from the form '0000-00-00T00:00:00Z' to the form, ['0000-00-00', '00:00:00']", () => {
 
-        const actual = formatDate('2021-08-20T15:37:01Z');
-        const expected = ['2021-08-20', '15:37:01'];
+        const actual = formatDate('0000-00-00T00:00:00Z');
+        const expected = ['0000-00-00', '00:00:00'];
         expect(actual).toEqual(expected)
     });
 });
