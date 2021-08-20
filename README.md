@@ -6,6 +6,9 @@
 
 
 ## Testing
+Dependencies Installed:
+- Mocha
+- Expect
 
 
 
