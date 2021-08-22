@@ -61,7 +61,13 @@ const GitHub = () => {
                     </input>
                 </form>
             </div>
-                {commits.length > 1 && displayName ? <h4>10 Most Recent Commits for {displayName}</h4> : null }
+                   
+                {commits.length > 1 && displayName ? (
+                <>
+                <h4>10 Most Recent Commits for {displayName}</h4>
+                <button className="function-button refresh" onClick={() => setCallAPI(true)}>🔄</button>
+                </>
+                ) : null }
             <ul className="commit-list">
                <div>
                {commits.map(commit => (
@@ -77,7 +83,6 @@ const GitHub = () => {
                ))}
                </div>
             </ul>
-                <button className="function-button" onClick={() => setCallAPI(true)}>🔄</button>
         </div>
     );
 };

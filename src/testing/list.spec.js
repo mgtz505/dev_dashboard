@@ -19,11 +19,11 @@ afterEach(() => {
   container = null;
 });
 
-it("Renders the News Component", () => {
+it("Renders the To-Do-List Component", () => {
   act(() => {
     render(<List />, container);
+    expect(container).toBeTruthy();
   });
-//   expect(container.textContent).toBe("No Tasks Remaining");
 
 });
 

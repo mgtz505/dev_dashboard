@@ -19,7 +19,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders with all tasks completed", () => {
+it("renders with or without a count prop", () => {
   act(() => {
     render(<Count />, container);
   });
