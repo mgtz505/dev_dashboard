@@ -6,6 +6,7 @@ import List from "./List";
 import Motivation from "./Motivation";
 import Editor from "./Editor";
 import Github from "./GitHub";
+import Weather from "./Weather";
 
 
 const HQ = () => {
@@ -19,6 +20,7 @@ const HQ = () => {
             <Motivation />
             <Editor />
             <Github />
+            <Weather />
         </div>
         </>
     );
