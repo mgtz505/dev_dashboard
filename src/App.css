@@ -15,3 +15,16 @@ grid-template-rows: 1fr 1fr;
 overflow: auto;
 height: 50vh;
 }
+
+.widgit-long {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  transition: 0.3s;
+  width: 62.5%;
+  margin: 0 2vh 5vh 2vh;
+  float: left;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  overflow: auto;
+  height: 50vh;
+  }
