@@ -7,21 +7,40 @@ const Weather = () => {
 
 const [weatherData, setWeatherData] = useState();
 const [seeForecast, setSeeForecast] = useState(false);
+const [city, setCity] = useState("");
+const [callAPI, setCallAPI] = useState(false);
 
 const URL = "http://wttr.in/London?format=j1"
 
 const getWeather = () => {
     axios.get(URL).then((response) => {
-        console.log(response.data)
-        console.log(response.data.current_condition[0].FeelsLikeF)
         setWeatherData(response.data)
     })
 }
 console.log(weatherData);
 
+console.log(city)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(!city) return;
+        setCallAPI(true)
+        setCity("");
+    }
+
     return (
         <div className="widgit">
             <h2>See Weather</h2>
+            <div className="city-form">
+                <form>
+                    <input
+                    type="text"
+                    placeholder="City Name..."
+                    city={city}
+                    onChange={(e) => setCity(e.target.value)}>
+                    </input>
+                </form>
+            </div>
            {weatherData ? (
                <>
                <div className="weather-container">

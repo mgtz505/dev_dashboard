@@ -46,12 +46,7 @@ const handleSubmit = (e) => {
     )
 }
 const List = () => {
-const [todos, setTodos] = useState([
-    // {text: "EXAMPLE TASK A", isComplete: false},
-    // {text: "EXAMPLE TASK B", isComplete: false},
-    // {text: "EXAMPLE TASK C", isComplete: false},
-    // {text: "EXAMPLE TASK D", isComplete: false},
-]);
+const [todos, setTodos] = useState([]);
 const [count, setCount] = useState(0);
 const [displayIndex, setDisplayIndex] = useState(false);
 
