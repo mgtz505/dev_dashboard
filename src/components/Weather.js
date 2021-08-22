@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import "../styles/weather.css";
 import formatTime from './formatTime';
@@ -8,36 +8,40 @@ const Weather = () => {
 const [weatherData, setWeatherData] = useState();
 const [seeForecast, setSeeForecast] = useState(false);
 const [city, setCity] = useState("");
+const [value, setValue] = useState("");
 const [callAPI, setCallAPI] = useState(false);
 
-const URL = "http://wttr.in/London?format=j1"
 
-const getWeather = () => {
+
+useEffect(() => {
+    const URL = `http://wttr.in/${city}?format=j1`
     axios.get(URL).then((response) => {
         setWeatherData(response.data)
     })
-}
-console.log(weatherData);
+    
+}, [callAPI, city])
 
+console.log(weatherData);
 console.log(city)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!city) return;
         setCallAPI(true)
-        setCity("");
+        setCity(value);
+        setCallAPI(false)
+        // setCity("")
     }
 
     return (
         <div className="widgit">
-            <h2>See Weather</h2>
+            {city.length > 1 ?<h2> Current Weather for {city}</h2> : <h2>Your Local Weather</h2>}
             <div className="city-form">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input
                     type="text"
                     placeholder="City Name..."
                     city={city}
-                    onChange={(e) => setCity(e.target.value)}>
+                    onChange={(e) => setValue(e.target.value)}>
                     </input>
                 </form>
             </div>
@@ -89,7 +93,7 @@ console.log(city)
                </>
            )
             : null}
-            <button className="control-button" onClick={() => getWeather()}>Get Weather</button>
+            {/* <button className="control-button" onClick={() => getWeather()}>Get Weather</button> */}
         </div>
     );
 };
