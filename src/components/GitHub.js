@@ -41,24 +41,12 @@ const GitHub = () => {
         // setRepoName("")
     }
 
-    // const formatDate = (str) => {
-    // let pivot = str.indexOf("T")
-    // let end = str.indexOf("Z")
-    // const date = str.slice(0,pivot)
-    // const time = str.slice(pivot + 1,end)
-    // return [date,time]
-    // }
-    
-
-
     console.log(displayName);
 
     return (
         <div className="widgit">
             <h2>GitHub Commit Buddy</h2>
-            {/* <h3>{repoName}</h3> */}
            
-            {/* {commits ? <a target="blank" href={commits[0].author.html_url}>Commits from {commits[0].author.login}</a> : null} */}
             <div className="input-field">
                 <form
                 onSubmit={handleSubmit}

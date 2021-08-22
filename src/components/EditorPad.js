@@ -39,17 +39,6 @@ const EditorPad = (props) => {
                 }}
                 />
             </div>
-
-            {/* <div className = "result-pane">
-                <iframe 
-                title="output"
-                sandbox="allow-scripts"
-                frameBorder="0"
-                width="100%"
-                height="100%"/>
-               {value}
-            </div> */}
-
         </div>
     );
 };

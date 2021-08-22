@@ -5,18 +5,6 @@ import Count from "../components/Count";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 
-// describe("The Count Component", () => {
-
-//     it("Component should render an integer count", () => {
-
-//         const component = renderer.create(
-
-//             <Count count={5}/>
-//         );
-//         expect(component.textContent).toBe(5)
-//         console.log(component);
-//     })
-// })
 let container = null;
 beforeEach(() => {
   // setup a DOM element as a render target
@@ -31,7 +19,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders with or without a name", () => {
+it("renders with all tasks completed", () => {
   act(() => {
     render(<Count />, container);
   });
