@@ -1,11 +1,28 @@
 .weather-container {
-    margin: 5vh 3vh 3vh 0;
+    margin: 3vh 3vh 3vh 3vh;
     padding: 10px;
-    width: 62%;
+    width: 80%;
     display: grid;
-    grid-template-columns: 1.5fr  2.5fr;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.forecast-container {
+    margin: 3vh 3vh 3vh 3vh;
+    padding: 10px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr  1fr;
     grid-template-rows: 1;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     transition: 0.3s;
+}
+.hour-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
 }

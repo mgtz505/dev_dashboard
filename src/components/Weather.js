@@ -25,8 +25,8 @@ console.log(weatherData);
                <div className="weather-container">
                    <h3>Currently</h3>
                    <h4>Actual Temp: {weatherData.current_condition[0].temp_F}°F | {weatherData.current_condition[0].temp_C}°C</h4>
-                   <h4>Feels like: {weatherData.current_condition[0].FeelsLikeF}°F | {weatherData.current_condition[0].FeelsLikeC}°C </h4>
                    <h4>Humidity: {weatherData.current_condition[0].humidity}%</h4>
+                   <h4>Feels like: {weatherData.current_condition[0].FeelsLikeF}°F | {weatherData.current_condition[0].FeelsLikeC}°C </h4>
                </div>
                <div className="weather-container">
                     <h3>Today</h3>
@@ -34,11 +34,26 @@ console.log(weatherData);
                     <h4>Average: {weatherData.weather[0].avgtempF}°F | {weatherData.weather[0].avgtempC}°C </h4>
                     <h4>Low: {weatherData.weather[0].mintempF}°F | {weatherData.weather[0].mintempC}°C </h4>
                 </div>
-                <div className="weather-container">
+                <div >
                     {weatherData.weather.map((days, index) => {
                         return (
-
-                            <h4>DEW{days.maxtempC}</h4>
+                            <div className="forecast-container" key ={index}>
+                            <h4>Forecast for {days.date.slice(5)}</h4>
+                            <h4>High: {days.maxtempF}°F | {days.maxtempC}°C</h4>
+                            <h4>Avg: {days.avgtempF}°F | {days.avgtempC}°C</h4>
+                            <h4>Low: {days.mintempF}°F | {days.mintempC}°C</h4>
+                            <h4>Forecast:</h4>
+                            <div className="hour-container">
+                                {days.hourly.map((hour) => {
+                                    return (
+                                        <>  
+                                            <h5>{hour.time}</h5>
+                                            <h5>{hour.FeelsLikeF}</h5>
+                                        </>
+                                    )
+                                })}
+                            </div>
+                            </div>
                         )})}
                 </div>
 
