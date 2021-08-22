@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import "../styles/weather.css";
+import formatTime from './formatTime';
 
 const Weather = () => {
 
 const [weatherData, setWeatherData] = useState();
+const [seeForecast, setSeeForecast] = useState(false);
 
 const URL = "http://wttr.in/London?format=j1"
 
@@ -34,33 +36,40 @@ console.log(weatherData);
                     <h4>Average: {weatherData.weather[0].avgtempF}°F | {weatherData.weather[0].avgtempC}°C </h4>
                     <h4>Low: {weatherData.weather[0].mintempF}°F | {weatherData.weather[0].mintempC}°C </h4>
                 </div>
-                <div >
+                <button 
+                className="control-button" 
+                onClick={() => setSeeForecast(!seeForecast)}>{seeForecast ? "Hide" : "See"} Detailed Forecast</button>
+                { seeForecast ? (
+                <div>
                     {weatherData.weather.map((days, index) => {
                         return (
                             <div className="forecast-container" key ={index}>
-                            <h4>Forecast for {days.date.slice(5)}</h4>
+                            <h4>Summary for {days.date.slice(5)}</h4>
                             <h4>High: {days.maxtempF}°F | {days.maxtempC}°C</h4>
                             <h4>Avg: {days.avgtempF}°F | {days.avgtempC}°C</h4>
                             <h4>Low: {days.mintempF}°F | {days.mintempC}°C</h4>
-                            <h4>Forecast:</h4>
-                            <div className="hour-container">
-                                {days.hourly.map((hour) => {
-                                    return (
-                                        <>  
-                                            <h5>{hour.time}</h5>
-                                            <h5>{hour.FeelsLikeF}</h5>
-                                        </>
-                                    )
-                                })}
-                            </div>
+                            <h4>Hourly Forecast:</h4>
+                                <div>
+                                    {days.hourly.map((hour) => {
+                                        return (
+                                                <div className="hour-container">
+                                                    <h3>{formatTime(hour.time)}</h3>
+                                                    <h4>{hour.weatherDesc[0].value} {hour.tempF}°F | {hour.tempC}°C</h4>
+                                                    <h5>Feels like: {hour.FeelsLikeF}°F | {hour.FeelsLikeC}°C</h5>
+                                                    <h5>Gusts: {hour.WindGustMiles} mph | WindChill: {hour.WindChillF}°F | {hour.WindChillC}°C</h5>
+                                                    <h5>Chance of Rain: {hour.chanceofrain}% | Precipitation: {hour.precipInches} in. </h5>
+                                                </div>
+                                        )
+                                    })}
+                                </div>
                             </div>
                         )})}
                 </div>
+                ) : null }
 
                </>
            )
             : null}
-            
             <button className="control-button" onClick={() => getWeather()}>Get Weather</button>
         </div>
     );
