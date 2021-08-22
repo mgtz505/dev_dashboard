@@ -7,8 +7,6 @@ const News = () => {
     //State
     const [stories, setStories] = useState([]);
     const [type, setType] = useState("");
-    //Function to Call NYT API
-    
     const selectType = (e) => setType(e.target.innerText);
     let selector = type.toLowerCase();
   //Global Variables
@@ -33,7 +31,7 @@ const News = () => {
     <div className = "widgit">
       <h2>See Today's Top News from the NYT</h2>
         <DropDown selectType={selectType}/>
-    <button className = "function-button" onClick={() => setStories([]) }>🚫</button>
+    {type ? <button className = "function-button" onClick={() => setStories([]) }>🚫</button> : null}
     </div>
       {stories.map((story, index) => {
         return (
