@@ -97,7 +97,7 @@ const handleComplete = (index) => {
                     displayIndex={displayIndex} />
                 )
             })}
-            <button className="function-button" onClick={() => setDisplayIndex(!displayIndex)}>🔢 </button>
+            {todos.length >= 1 ? <button className="function-button" onClick={() => setDisplayIndex(!displayIndex)}>🔢 </button> : null}
         </div>
     );
 };
