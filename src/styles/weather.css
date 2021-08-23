@@ -1,8 +1,8 @@
 
 
 .weather-container {
-    margin: 3vh 3vh 3vh 3vh;
-    padding: 10px;
+    margin: 0vh 3vh 1vh 3vh;
+    padding: 8px;
     width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
@@ -16,20 +16,25 @@
     grid-template-columns: 1fr 1fr;
 }
 .forecast-container {
-    margin: 3vh 3vh 3vh 3vh;
+    /* margin: 3vh 3vh 3vh 3vh; */
     padding: 10px;
-    width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 10px;
-    transition: 0.3s;
+    width: 95%;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    /* border-radius: 10px; */
+    /* transition: 0.3s; */
     display:grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .hour-container {
-    margin: 3vh 3vh 3vh 3vh;
-    padding: 10px;
+    /* margin: 3vh 3vh 3vh 3vh; */
+    padding: 1vh;
     width: 80%;
+
+    display: grid;
+    grid-template-rows: .5fr 4fr ;
+
+
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     transition: 0.3s;

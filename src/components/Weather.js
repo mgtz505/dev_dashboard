@@ -11,8 +11,6 @@ const [city, setCity] = useState("");
 const [value, setValue] = useState("");
 const [callAPI, setCallAPI] = useState(false);
 
-
-
 useEffect(() => {
     const URL = `http://wttr.in/${city}?format=j1`
     axios.get(URL).then((response) => {
@@ -21,15 +19,15 @@ useEffect(() => {
     
 }, [callAPI, city])
 
-console.log(weatherData);
-console.log(city)
+// console.log(weatherData);
+// console.log(city)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setCallAPI(true)
         setCity(value);
-        setCallAPI(false)
-        // setCity("")
+        setCallAPI(false);
+        setSeeForecast(false);
     }
 
     return (
@@ -71,22 +69,24 @@ console.log(city)
                 <div>
                     {weatherData.weather.map((days, index) => {
                         return (
-                            <div  key ={index}>
-                            <h4>Summary for {days.date.slice(5)}</h4>
-                            <h4>High: {days.maxtempF}°F | {days.maxtempC}°C</h4>
-                            <h4>Avg: {days.avgtempF}°F | {days.avgtempC}°C</h4>
-                            <h4>Low: {days.mintempF}°F | {days.mintempC}°C</h4>
+                            <div className="weather-container" key ={index}>
+                                <h3 className="container-header">Summary for {days.date.slice(5)}</h3>
+                                <div className="grouping">
+                                    <h4>High: {days.maxtempF}°F | {days.maxtempC}°C</h4>
+                                    <h4>Low: {days.mintempF}°F | {days.mintempC}°C</h4>
+                                </div>
                                 <div className="forecast-container">
                                     {days.hourly.map((hour) => {
                                         return (
                                                 <div className="hour-container">
-                                                    <div className="grouping">
-                                                        <h3 className="container-header">{formatTime(hour.time)}</h3>
+                                                    <h3 className="container-header">{formatTime(hour.time)}</h3>
+                                                    <div className="grouping-details">
                                                             <h4>{hour.weatherDesc[0].value} </h4>
                                                             <h5>{hour.tempF}°F | {hour.tempC}°C</h5>
-                                                            <h5>Feels like: {hour.FeelsLikeF}°F | {hour.FeelsLikeC}°C</h5>
+                                                            <h5>Feels Like: {hour.FeelsLikeF}°F | {hour.FeelsLikeC}°C</h5>
                                                             <h5>Gusts: {hour.WindGustMiles} mph </h5>
-                                                            <h5>Chance of Rain: {hour.chanceofrain}% | Precipitation: {hour.precipInches} in. </h5>
+                                                            <h5>Chance of Rain: {hour.chanceofrain}% </h5>
+                                                            <h5>Precipitation: {hour.precipInches} in.</h5>
                                                     </div>
                                                 </div>
                                         )
