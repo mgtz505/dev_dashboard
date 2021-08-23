@@ -44,7 +44,9 @@ useEffect(() => {
     return (
         <div className="widgit">
             <div className="timer-body">
-            <h2>Pomodoro Timer</h2>
+              <div className="banner-container">
+                <h2>Pomodoro Timer</h2>
+              </div>
                 <div className="message-body">
                     {message && <h3>Break! Resume in:</h3>}
                 </div>
