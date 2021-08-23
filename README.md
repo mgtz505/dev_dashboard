@@ -7,8 +7,10 @@
 
 ## Testing
 Dependencies Installed:
+- Jest
 - Mocha
-- Expect
+- Expect 
+- identity-obj-proxy (used for handling of my CSS modules by Jest's moduleNameMapper)
 
 
 
