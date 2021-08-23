@@ -51,7 +51,7 @@ useEffect(() => {
                     {message && <h3>Break! Resume in:</h3>}
                 </div>
                 <div className="timer-body">
-                    <h1 className="time-text" style={{color: paused ? "blue" : null}}>{timerMinutes}:{timerSeconds}</h1>
+                    <h1 className="time-text" style={{color: paused ? "#577590" : null}}>{timerMinutes}:{timerSeconds}</h1>
                 </div>
                 <div className="control-panel">
                     {paused ? <button
