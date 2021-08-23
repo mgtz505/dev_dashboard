@@ -11,8 +11,8 @@ const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
                 >               
                     <h2 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h2>
                     <div className="control-panel">
-                        <button className="function-button" onClick={() => handleComplete(index)}>✔️</button>
-                        <button className="function-button" onClick={() => handleDelete(index)}>🗑</button>
+                        <button className="function" onClick={() => handleComplete(index)}>✔️</button>
+                        <button className="function" onClick={() => handleDelete(index)}>🗑</button>
                     </div>
                 </div>
         </div>
@@ -78,7 +78,9 @@ const handleComplete = (index) => {
 }
     return (
         <div className="widgit">
+            <div className="banner-container">
             <h2>Tasks to Complete</h2>
+            </div>
             <Count count={count}/>
             <TodoForm
             addTodo={addTodo} />

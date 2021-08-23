@@ -21,10 +21,11 @@ const EditorPad = (props) => {
 
     return (
         <div className="widgit">
-            <h2>Scratchpad</h2>
+            
             <div className="editor-container">
-                <div className="editor-title">
-                    <h4>{displayName}</h4>
+                
+                <div className="banner-container">
+                    <h2>Javascript Scratchpad</h2>
                 </div>
                 <ControlledEditor
                 onBeforeChange={handleChange}

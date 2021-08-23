@@ -45,7 +45,9 @@ const GitHub = () => {
 
     return (
         <div className="widgit">
+            <div className="banner-container">
             <h2>GitHub Commit Buddy</h2>
+            </div>
            
             <div className="input-field">
                 <form

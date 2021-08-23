@@ -22,7 +22,6 @@ const HQ = () => {
             <Editor />
             <Github />
             <Weather />
-            <Loripsum />
         </div>
         </>
     );

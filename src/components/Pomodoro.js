@@ -43,15 +43,15 @@ useEffect(() => {
 
     return (
         <div className="widgit">
-            <div className="timer-body">
               <div className="banner-container">
                 <h2>Pomodoro Timer</h2>
               </div>
+            <div className="timer-body">
                 <div className="message-body">
                     {message && <h3>Break! Resume in:</h3>}
                 </div>
                 <div className="timer-body">
-                    <h1 style={{color: paused ? "blue" : null}}>{timerMinutes}:{timerSeconds}</h1>
+                    <h1 className="time-text" style={{color: paused ? "blue" : null}}>{timerMinutes}:{timerSeconds}</h1>
                 </div>
                 <div className="control-panel">
                     {paused ? <button

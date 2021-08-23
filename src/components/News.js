@@ -29,7 +29,9 @@ const News = () => {
   return (
       <>
     <div className = "widgit">
-      <h2>See Today's Top News from the NYT</h2>
+        <div className="banner-container">
+          <h2>Top News from the NYT</h2>
+        </div>
         <DropDown selectType={selectType}/>
     {type ? <button className = "function-button" onClick={() => setStories([]) }>🚫</button> : null}
     </div>

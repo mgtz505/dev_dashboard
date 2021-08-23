@@ -41,7 +41,9 @@ console.log(quote)
 
     return (
         <div className="widgit">
+            <div className="banner-container">
             <h2>Get Motivated</h2>
+            </div>
             <div className="content">
             <img className="motivation-image" onError={e => e.target.style.display = 'none'} src={photo}/>
             {quote.length > 1 ? (<div className="quote-container">

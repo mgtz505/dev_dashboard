@@ -19,8 +19,6 @@ useEffect(() => {
     
 }, [callAPI, city])
 
-// console.log(weatherData);
-// console.log(city)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,7 +30,9 @@ useEffect(() => {
 
     return (
         <div className="widgit-long">
+            <div className="banner-container">
             {city.length > 1 ?<h2> Current Weather for {city}</h2> : <h2>Your Local Weather</h2>}
+            </div>
             <div className="city-form">
                 <form onSubmit={handleSubmit}>
                     <input
@@ -46,8 +46,7 @@ useEffect(() => {
            {weatherData ? (
                <>
                <div className="weather-container">
-                   <h3 className="container-header">Currently</h3>
-                   <h3 >{weatherData.current_condition[0].weatherDesc[0].value}</h3>
+                        <h3 className="container-header">Currently: {weatherData.current_condition[0].weatherDesc[0].value}</h3>
                    <div className="grouping">
                    <h4>Actual Temp: {weatherData.current_condition[0].temp_F}°F | {weatherData.current_condition[0].temp_C}°C</h4>
                    <h4>Feels like: {weatherData.current_condition[0].FeelsLikeF}°F | {weatherData.current_condition[0].FeelsLikeC}°C </h4>
