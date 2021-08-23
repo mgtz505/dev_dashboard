@@ -15,28 +15,31 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.grouping-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* gap: 1vh; */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+}
 .forecast-container {
-    /* margin: 3vh 3vh 3vh 3vh; */
     padding: 10px;
-    width: 95%;
-    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-    /* border-radius: 10px; */
-    /* transition: 0.3s; */
+    width: 100%;
     display:grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .hour-container {
-    /* margin: 3vh 3vh 3vh 3vh; */
-    padding: 1vh;
+    padding: 10px;
     width: 80%;
-
     display: grid;
-    grid-template-rows: .5fr 4fr ;
-
-
+    grid-template-rows: .25fr 1fr ;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     transition: 0.3s;
+    height: 20vh;
+}
 
+.datum {
+    margin-bottom: -10px;
+    margin-top: -10px;
 }

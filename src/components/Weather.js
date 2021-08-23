@@ -81,12 +81,10 @@ useEffect(() => {
                                                 <div className="hour-container">
                                                     <h3 className="container-header">{formatTime(hour.time)}</h3>
                                                     <div className="grouping-details">
-                                                            <h4>{hour.weatherDesc[0].value} </h4>
-                                                            <h5>{hour.tempF}°F | {hour.tempC}°C</h5>
-                                                            <h5>Feels Like: {hour.FeelsLikeF}°F | {hour.FeelsLikeC}°C</h5>
-                                                            <h5>Gusts: {hour.WindGustMiles} mph </h5>
-                                                            <h5>Chance of Rain: {hour.chanceofrain}% </h5>
-                                                            <h5>Precipitation: {hour.precipInches} in.</h5>
+                                                            <h5 className="datum">{hour.weatherDesc[0].value} </h5>
+                                                            <h5 className="datum">Feels Like: {hour.FeelsLikeF}°F | {hour.FeelsLikeC}°C</h5>
+                                                            <h5 className="datum">Gusts: {hour.WindGustMiles} mph </h5>
+                                                            <h5 className="datum">Chance of Rain: {hour.chanceofrain}% </h5>
                                                     </div>
                                                 </div>
                                         )
