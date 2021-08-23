@@ -7,6 +7,7 @@ import Motivation from "./Motivation";
 import Editor from "./Editor";
 import Github from "./GitHub";
 import Weather from "./Weather";
+import URL from "./URL";
 
 
 const HQ = () => {
@@ -21,6 +22,7 @@ const HQ = () => {
             <Editor />
             <Github />
             <Weather />
+            <URL />
         </div>
         </>
     );
