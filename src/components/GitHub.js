@@ -79,7 +79,7 @@ const GitHub = () => {
                        
                        <h5>Commit Date: {formatDate(commit.commit.author.date)[0]}</h5>
                        <h5>Commit Time: {formatDate(commit.commit.author.date)[1]}</h5>
-                       <a target="blank" href={commit.html_url}>See Commit</a>
+                       <a className="grow" target="blank" href={commit.html_url}>See Commit</a>
                     </li>
                 </div>
                ))}
