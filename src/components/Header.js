@@ -5,9 +5,10 @@ const Header = () => {
     return (
         <div>
             <nav>
+            {/* <h1>Welcome to Dev Dashboard</h1> */}
+                <Link to="/">Home</Link>
                 <Link to="/about">About This App</Link>
             </nav>
-            <h1>Welcome to Dev Dashboard</h1>
             <Route path="/about" component={About} />
         </div>
     );

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Link } from "react-router-dom";
+import "../styles/about.css";
+
 
 const About = () => {
     return (
-        <div>
-            <Link to="/">Home</Link>
+        <div className="aboutPage">
 
-            <h2>About</h2>
+            <h2>About Dev Dashboard</h2>
             
         </div>
     );
