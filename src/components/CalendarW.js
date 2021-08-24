@@ -14,9 +14,9 @@ const CalendarW = () => {
                 <h2>Calendar</h2>
             </div>
             <div className="calendar-container">
-                <Calendar onChange={setDate} value={date}/>
+                <Calendar className="calendar" onChange={setDate} value={date}/>
             </div>
-            <h3>Selected Date: {date.toString().slice(0,15)}</h3>
+            {date ? <h3>Selected Date: {date.toString().slice(0,15)}</h3> : null}
 
         </div>
     );
