@@ -19,7 +19,11 @@ const Reminder = ({date}) => {
         addReminder(date, value);
     }
 
-console.log(reminders)
+    const handleDelete = (index) => {
+        const newReminders = [...reminders];
+        newReminders.splice(index,1);
+        setReminders(newReminders);
+    }
   
 return (
         <div>
@@ -33,10 +37,11 @@ return (
                 </input>
             </form>
             <div>
-                {reminders.map((reminder) => {
+                {reminders.map((reminder, index) => {
                     return (
                         <div className="reminder-container">
-                        <h4>{reminder.date} - {reminder.text}</h4>
+                            <h4>{reminder.date} - {reminder.text}</h4>
+                            <button className="function-button" onClick={() => handleDelete(index)}>🗑</button> 
                         </div>
                     )
                 })}
