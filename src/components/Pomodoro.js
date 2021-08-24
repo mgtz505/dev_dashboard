@@ -54,9 +54,10 @@ useEffect(() => {
                     <h1 className="time-text" style={{color: paused ? "#577590" : null}}>{timerMinutes}:{timerSeconds}</h1>
                 </div>
                     {paused ? <button
-                    onClick={() => handleReset()} 
+                    onClick={() => handleReset()}
+                    className="function-button" 
                     >🔄</button> : null}
-                    <button onClick={() => setPaused(!paused)}>⏯️</button>
+                    <button className="function-button" onClick={() => setPaused(!paused)}>⏯️</button>
             </div>
         </div>
     );

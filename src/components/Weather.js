@@ -61,7 +61,7 @@ useEffect(() => {
                         <h4>Low: {weatherData.weather[0].mintempF}°F | {weatherData.weather[0].mintempC}°C </h4>
                     </div>
                 </div>
-                <button className="forecast-toggle" onClick={() => setSeeForecast(!seeForecast)}>{seeForecast ? "Hide" : "See"} Detailed Forecast</button>
+                <button className="forecast-toggle function-button" onClick={() => setSeeForecast(!seeForecast)}>{seeForecast ? "Hide" : "See"} Detailed Forecast</button>
                 { seeForecast ? (
                 <div>
                     {weatherData.weather.map((days, index) => {
