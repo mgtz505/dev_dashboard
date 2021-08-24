@@ -66,7 +66,7 @@ const GitHub = () => {
                    
                 {commits.length > 1 && displayName ? (
                 <>
-                <h4>10 Most Recent Commits for {displayName}</h4>
+                <h3>Displaying 10 Most Recent Commits for {displayName}</h3>
                 <button className="function-button refresh" onClick={() => setCallAPI(true)}>🔄</button>
                 </>
                 ) : null }
