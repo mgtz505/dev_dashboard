@@ -4,8 +4,8 @@ const Count = ({ count }) => {
     return (
         <div className="count-container">
             {count ? 
-            (count === 1 ? <h4>{count} task remaining</h4> : <h4>{count} tasks remaining</h4> )
-            : <h4>No Tasks Remaining</h4>}
+            (count === 1 ? <h3>{count} task remaining</h3> : <h3>{count} tasks remaining</h3> )
+            : <h1>No Tasks Remaining!</h1>}
         </div>
     )
 }
