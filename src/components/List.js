@@ -9,7 +9,7 @@ const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
                 className="todo-entry"
                 style={{textDecoration: todo.isComplete ? "line-through" : ""}}
                 >               
-                    <h2 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h2>
+                    <h3 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h3>
                     <div className="control-panel">
                         <button className="function" onClick={() => handleComplete(index)}>✔️</button>
                         <button className="function" onClick={() => handleDelete(index)}>🗑</button>
@@ -84,6 +84,7 @@ const handleComplete = (index) => {
             <Count count={count}/>
             <TodoForm
             addTodo={addTodo} />
+            {todos.length >= 1 ? <button className="function-button" onClick={() => setDisplayIndex(!displayIndex)}>🔢 </button> : null}
             {todos.map((todo, index) => {
                 return (
                     <Todo
@@ -94,7 +95,6 @@ const handleComplete = (index) => {
                     displayIndex={displayIndex} />
                 )
             })}
-            {todos.length >= 1 ? <button className="function-button" onClick={() => setDisplayIndex(!displayIndex)}>🔢 </button> : null}
         </div>
     );
 };
