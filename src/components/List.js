@@ -77,7 +77,7 @@ const handleComplete = (index) => {
     setTodos(newTodos);
 }
     return (
-        <div className="widgit">
+        <div className="widgit-tall">
             <div className="banner-container">
             <h2>Tasks to Complete</h2>
             </div>

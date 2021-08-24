@@ -10,8 +10,6 @@ const Editor = () => {
     <script>${javascript}</script>
     </html>
     `
-
-
     return (
         <div>
             <EditorPad 

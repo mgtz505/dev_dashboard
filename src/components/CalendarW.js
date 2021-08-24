@@ -16,7 +16,7 @@ const CalendarW = () => {
     }
 
     return (
-        <div className="widgit">
+        <div className="widgit-tall">
             <div className="banner-container">
                 <h2>Calendar</h2>
             </div>

@@ -44,7 +44,7 @@ const GitHub = () => {
     console.log(displayName);
 
     return (
-        <div className="widgit">
+        <div className="widgit-tall">
             <div className="banner-container">
             <h2>GitHub Commit Buddy</h2>
             </div>

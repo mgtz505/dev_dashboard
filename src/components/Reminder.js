@@ -26,8 +26,7 @@ const Reminder = ({date}) => {
     }
   
 return (
-        <div>
-           
+        <div className="reminder-form-container">
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text"
