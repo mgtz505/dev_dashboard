@@ -12,8 +12,7 @@ import CalendarW from "./CalendarW";
 
 const HQ = () => {
     return (
-        <>
-        <h2>What are we going to build Today?</h2>
+        
         <div className="widgit-grid">
             <Pomodoro />
             <News />
@@ -24,7 +23,7 @@ const HQ = () => {
             <List />
             <CalendarW />
         </div>
-        </>
+        
     );
 };
 

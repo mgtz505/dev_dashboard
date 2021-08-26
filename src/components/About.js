@@ -8,7 +8,6 @@ const About = () => {
         <div className="aboutPage">
 
             <h2>About Dev Dashboard</h2>
-            <button className="test">Hello there</button>
      
         </div>
     );
