@@ -1,0 +1,12 @@
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: whitesmoke;
+    height: 5vh;
+    align-items: center;
+}
+
+.link {
+    color: #7b5673;
+    font-size: 3vh;
+}

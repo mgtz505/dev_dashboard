@@ -38,7 +38,7 @@ const GitHub = () => {
         e.preventDefault();
         if(!repoName)return
         setCallAPI(true);
-        // setRepoName("")
+        
     }
 
     console.log(displayName);
