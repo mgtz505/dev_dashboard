@@ -1,5 +1,4 @@
 
-
 .weather-container {
     margin: 0vh 3vh 1vh 3vh;
     padding: 8px;
@@ -7,6 +6,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     transition: 0.3s;
+    background: whitesmoke;
 }
 .container-header {
     float: left;
@@ -37,9 +37,19 @@
     border-radius: 10px;
     transition: 0.3s;
     height: 20vh;
+    margin-top: 1vh;
 }
 
 .datum {
     margin-bottom: -10px;
     margin-top: -10px;
+}
+
+.forecast-toggle {
+    width: 10vw !important;
+    padding: 4px;
+    color: black !important;
+}
+.forecast-toggle:hover {
+    color: white !important;
 }

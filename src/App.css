@@ -1,10 +1,18 @@
+html, body {
+height: 100%;
+width: 100%;
+background-color: #84A98C;
+color: #7b5673;
+font-family: 'Lato', sans-serif;
+
+}
+
 .App {
   text-align: center;
-  
 }
 
 .widgit {
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+box-shadow: 0 12px 6px 0 rgba(0,0,0,0.8);
 border-radius: 10px;
 transition: 0.3s;
 width: 30%;
@@ -13,18 +21,115 @@ float: left;
 display: grid;
 grid-template-rows: 1fr 1fr;
 overflow: auto;
-height: 45vh;
+height: 50vh;
+background-color: #CAD2C5;
 }
 
 .widgit-long {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 12px 6px 0 rgba(0,0,0,0.8);
   border-radius: 10px;
   transition: 0.3s;
-  width: 62.5%;
+  width: 62%;
   margin: 0 2vh 5vh 2vh;
   float: left;
   display: grid;
   grid-template-rows: 1fr 1fr;
   overflow: auto;
   height: 50vh;
+  background-color: #CAD2C5;
   }
+
+  .widgit-tall {
+    box-shadow: 0 12px 6px 0 rgba(0,0,0,0.8);
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 30%;
+    margin: 0 2vh 5vh 2vh;
+    float: left;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    overflow: auto;
+    height: 80vh;
+    background-color: #CAD2C5;
+    }
+
+  input {
+    border: 2px solid #52796F;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    color: #7b5673;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input:hover {
+cursor: pointer;
+}
+
+a {
+  color: #52796F;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #84A98C;
+
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+
+.banner-container {
+  background-image: linear-gradient(whitesmoke,white);
+  height: 6vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decorative-container{
+  background-image: linear-gradient(whitesmoke,white);
+  height: 6vh;
+  display: flex;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.function-button {
+  background: whitesmoke;
+  color: white;
+  border-radius: 90px;
+  cursor: pointer;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+  width: 6vw;
+  border:2px solid #2F3E46;
+  margin: 0 auto;
+}
+
+button:hover {
+  background:#2F3E46;
+  border: 2px solid whitesmoke;
+}
+
+
+

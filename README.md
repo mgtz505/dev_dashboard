@@ -40,7 +40,11 @@ describe("formatDate function", () => {
 Using TestUtils from the react-addons package, I constructed shallow renderings for some of my individual components. 
 
 
-
-
 ### Static Testing
 It goes without saying, but static testing (Addressing simple typos, errors) was provided by use of ESLint. In another pass at this appliction, utilizing Typescript would provide an additional degree of protection against some of these mistakes. 
+
+
+
+## Styling
+
+###

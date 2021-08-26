@@ -8,29 +8,22 @@ grid-template-rows: 2fr 1fr 1fr;
 align-content: center;
 padding: 2px;    
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-border-radius: 5px;
+border-radius: 10px;
 transition: 0.3s;
-width: 90%;
+width: 80%;
 overflow: auto;
-height: 24vh;  
-margin-top: 2vh;
-line-height: 1;  
+height: 22vh;  
+margin: 2vh auto 2vh;
+line-height: 1; 
+background: whitesmoke; 
 }
 
 .commit-text {
-    margin-top: 4vh;
+    margin-top: 2vh;
 }
 
 .commit-list {
     margin-top: 2vh;
-}
-
-.repo-input {
-    border: 2px solid orange;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    border-radius: px;
 }
 
 .refresh {

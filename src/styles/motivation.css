@@ -1,17 +1,10 @@
-.reload-button {
-    background: black;
-    color: white;
-    border-radius: 90px;
-    cursor: pointer;
-    padding: 4px 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    border: none;
-    vertical-align: middle;
-    transition: box-shadow 0.4s ease;
-    width: 70%;
-    font-weight: 700;
-    vertical-align: middle;
-    font-size: 18px;
-    margin: 0 10px;
+.motivation-image {
+    max-width: 100%;
+    height: 40%;
+    /* border: 1px solid whitesmoke; */
+    border-radius: 10px;;
+  }
+.quote-container {
+    width: 90%;
+    margin: 0 auto;
 }
-

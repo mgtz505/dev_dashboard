@@ -18,7 +18,7 @@ const CalendarW = () => {
     return (
         <div className="widgit-tall">
             <div className="banner-container">
-                <h2>Calendar</h2>
+                <h2>Reminders</h2>
             </div>
             <div className="calendar-container">
                 <Calendar className="calendar" onChange={setDate} value={date}/>

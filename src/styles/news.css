@@ -8,31 +8,13 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     transition: 0.3s;
+    background: whitesmoke;
 }
 .story-container:hover {
     box-shadow: 0 8px 16px 0 rgba(98,0,0,0.2);
 }
 
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.1); }
-
 .story-image {
     border-radius: 5px;
 }
 
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-a:active {
-    text-decoration: underline;
-}

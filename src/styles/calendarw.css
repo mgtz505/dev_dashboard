@@ -1,0 +1,11 @@
+body {
+    overflow: auto;
+}
+.calendar {
+    height: 40vh;
+    width: 100%;
+    margin: 0 auto;
+}
+.calendar-container {
+    /* margin-top: -20vh; */
+}
