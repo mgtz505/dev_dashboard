@@ -29,7 +29,7 @@ const Modal = ({ title, header, description, details }) => {
                    })}
                     </div>
                 </main>
-                <button className="function-button"
+                <button className="modal-button-exit"
                         onClick={() => Toggle()}>🚫
                         </button>
                 </div>

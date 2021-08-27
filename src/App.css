@@ -125,7 +125,10 @@ a:active {
   transition: box-shadow 0.4s ease;
   width: 6vw;
   border:2px solid #2F3E46;
-  margin: 0 auto;
+  margin: 0 auto 5px;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
 }
 
 button:hover {
@@ -150,6 +153,20 @@ button:hover {
   bottom: 0;
   right: 10px;
   z-index: 1;
+}
+.modal-button-exit {
+  background: whitesmoke;
+  color: white;
+  border-radius: 90px;
+  cursor: pointer;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+  width: 6vw;
+  border:2px solid #2F3E46;
+  margin: 0 auto 5px;
   
 }
 
