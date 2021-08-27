@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/pomodoro.css";
+import ModalContainer from './ModalContainer';
 
 const Pomodoro = () => {
 const [minutes, setMinutes] = useState(25);
 const [seconds, setSeconds] = useState(0);
 const [message, setMessage] = useState(false);
-
 const [paused, setPaused] = useState(false);
 
 const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
 const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+const description = "The Pomodoro method is a classic productivity hack. Buckle-in for a 25 minute focused sprint, then decompress for five minutes. Rinse and repeat."
+const details = ["Clicking ⏯️ will also allow you to reset the timer by clicking 🔄", "The timer's font color will change to blue while paused"]
 
 const handleReset = () => {
   setMinutes(currMin => currMin = 25);
@@ -43,6 +46,7 @@ useEffect(() => {
 
     return (
         <div className="widgit">
+          <ModalContainer title="Pomodoro Timer" header="For when time is of the essence!" description={description} details={details}/>
               <div className="banner-container">
                 <h2>Pomodoro Timer</h2>
               </div>
