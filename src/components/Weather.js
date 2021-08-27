@@ -17,7 +17,7 @@ useEffect(() => {
         setWeatherData(response.data)
     })
     
-}, [callAPI, city])
+}, [callAPI,city])
 
 
     const handleSubmit = (e) => {
@@ -27,6 +27,8 @@ useEffect(() => {
         setCallAPI(false);
         setSeeForecast(false);
     }
+
+console.log(weatherData)
 
     return (
         <div className="widgit-long">

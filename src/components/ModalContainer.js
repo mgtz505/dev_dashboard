@@ -6,7 +6,6 @@ const Modal = ({ title, header, description, details }) => {
     const [modal, setModal] = useState(false);
     const Toggle = () => setModal(!modal)
 
-console.log(details)
 
     return (
         <>
