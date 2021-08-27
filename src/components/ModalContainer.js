@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import "../styles/modal.css"
 
-const Modal = ({ show, close, title, header, description, detail }) => {
+const Modal = ({ title, header, description, detail }) => {
     
+    const [modal, setModal] = useState(false);
+    const Toggle = () => setModal(!modal)
+
+console.log(modal)
+
     return (
         <>
+        <button className="function-button" onClick={() => Toggle()}>Display Modal</button>
+
         {
-        show ? (
+        modal ? (
             <div className="modalContainer"
-            onClick={() => close()}>
+            onClick={() => Toggle()}>
                 <div className="modal" onClick={(e) => e.stopPropagation()}>
                     <h2 className="modal-title">{title}</h2>
                     
@@ -18,7 +25,7 @@ const Modal = ({ show, close, title, header, description, detail }) => {
                     <p>{detail}</p>
                 </main>
                 <button className="function-button"
-                        onClick={() => close()}>Close Modal
+                        onClick={() => Toggle()}>Close Modal
                         </button>
                 </div>
             </div>
@@ -29,17 +36,17 @@ const Modal = ({ show, close, title, header, description, detail }) => {
 
 
 
-const ModalContainer = () => {
+// const ModalContainer = () => {
 
-    const [modal, setModal] = useState(false);
-    const Toggle = () => setModal(!modal)
+//     const [modal, setModal] = useState(false);
+//     const Toggle = () => setModal(!modal)
 
-    return (
-        <div>
-            <button className="function-button" onClick={() => Toggle()}>Display Modal</button>
-            <Modal show={modal} close={Toggle} title="" description="" detail="" header=""/>
-        </div>
-    );
-};
+//     return (
+//         <div>
+//             <button className="function-button" onClick={() => Toggle()}>Display Modal</button>
+//             <Modal show={modal} close={Toggle} title="" description="" detail="" header=""/>
+//         </div>
+//     );
+// };
 
-export default ModalContainer;
+export default Modal;
