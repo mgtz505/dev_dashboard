@@ -21,8 +21,8 @@
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
- .modal-header-title{
-      text-align: center;
+.modal-title {
+    margin-bottom: -2vh;
 }
 
 .close {

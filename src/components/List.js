@@ -52,8 +52,8 @@ const [todos, setTodos] = useState([]);
 const [count, setCount] = useState(0);
 const [displayIndex, setDisplayIndex] = useState(false);
 
-const description = "This is as simple as it gets: a handy list to help you tackle (and mark-off) today's tasks."
-const details = ["Click on the bold check mark to toggle an item on your list as complete.", "Clicking on the trash bin will remove the task from the list.", "You can apply numerical headers to your list by clicking the numbers button"]
+const description = "As simple as it gets: a handy list to help you tackle (and mark-off) today's tasks."
+const details = ["Click on the bold check mark to toggle an item on your list as complete", "Clicking on the trash bin will remove the task from the list", "You can apply numerical headers to your list by clicking the numbers button"];
 
 const addTodo = (text, isComplete = false) => {
     const newTodos = [...todos, { text, isComplete}];
