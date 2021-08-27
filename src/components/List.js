@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "../styles/list.css";
 import Count from "./Count";
 
+
 const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
     return (
         <div className="todo-container">
