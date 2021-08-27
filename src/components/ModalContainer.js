@@ -10,7 +10,7 @@ console.log(modal)
 
     return (
         <>
-        <button className="function-button" onClick={() => Toggle()}>Display Modal</button>
+        <button className="function-button" onClick={() => Toggle()}>ℹ️</button>
 
         {
         modal ? (
@@ -25,7 +25,7 @@ console.log(modal)
                     <p>{detail}</p>
                 </main>
                 <button className="function-button"
-                        onClick={() => Toggle()}>Close Modal
+                        onClick={() => Toggle()}>🚫
                         </button>
                 </div>
             </div>
