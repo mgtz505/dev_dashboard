@@ -3,7 +3,7 @@
     margin-top: 5vh;
     padding: 5px;
     width: 80%;
-    height: 14vh;
+    height: 18vh;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     background: whitesmoke;
@@ -12,5 +12,21 @@
 
 .reminder-form-container {
     position: static;
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
+
+.button-reminder {
+    background: whitesmoke;
+    color: white;
+    border-radius: 90px;
+    cursor: pointer;
+    padding: 4px 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: none;
+    vertical-align: middle;
+    transition: box-shadow 0.4s ease;
+    width: 6vw;
+    border:2px solid #2F3E46;
+    margin: 0 auto 5px;
+    
+  }

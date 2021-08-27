@@ -27,7 +27,7 @@ const CalendarW = () => {
             </div>
             {date ? (
             <div className="reminder-body-start">
-            <h3>Selected Date: {handleDate(date)}</h3>
+            <h3>Selected: {handleDate(date)}</h3>
             <Reminder date={handleDate(date)} />
             </div>
             ) : null}

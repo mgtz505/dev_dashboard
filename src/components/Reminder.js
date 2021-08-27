@@ -41,8 +41,9 @@ return (
                 {reminders.map((reminder, index) => {
                     return (
                         <div className="reminder-container">
-                            <h4>{reminder.date} - {reminder.text}</h4>
-                            <button className="function-button" onClick={() => handleDelete(index)}>🗑</button> 
+                            <h4>{reminder.date}<h4>
+                            </h4>{reminder.text}</h4>
+                            <button className="button-reminder" onClick={() => handleDelete(index)}>🗑</button> 
                         </div>
                     )
                 })}

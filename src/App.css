@@ -50,7 +50,7 @@ position: relative;
     display: grid;
     grid-template-rows: 1fr 1fr;
     overflow: auto;
-    height: 80vh;
+    height: 65vh;
     background-color: #CAD2C5;
     position: relative;
     }
