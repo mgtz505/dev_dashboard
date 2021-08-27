@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import "../styles/weather.css";
 import formatTime from './formatTime';
+import ModalContainer from "./ModalContainer";
+
 
 const Weather = () => {
 
@@ -10,6 +12,10 @@ const [seeForecast, setSeeForecast] = useState(false);
 const [city, setCity] = useState("");
 const [value, setValue] = useState("");
 const [callAPI, setCallAPI] = useState(false);
+
+const description = "Type in a city and see today's weather. You can also render a detailed three-day forecast"
+const details = ["Data provided via Wttr.in", "Be aware - some cities are currently not being served by the API", "Your local weather is the default! If you don't need to see the weather for another locale, no need to change anything."]
+
 
 useEffect(() => {
     const URL = `http://wttr.in/${city}?format=j1`
@@ -32,6 +38,7 @@ console.log(weatherData)
 
     return (
         <div className="widgit-long">
+            <ModalContainer title="Weather" header="AWS-y with a chance of showers" description={description} details={details}/>
             <div className="banner-container">
             {city.length > 1 ?<h2> Current Weather for {city}</h2> : <h2>Your Local Weather</h2>}
             </div>
