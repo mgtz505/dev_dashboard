@@ -62,17 +62,6 @@
     left: 12vw;
   }
 
-
-  /* .triggerButton:hover {
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .triggerButton span {
-    font-weight: 700;
-    vertical-align: middle;
-    font-size: 18px;
-    margin: 0 10px;
-  } */
   .grow {
     transition: all 0.2s ease-in-out;
   }
