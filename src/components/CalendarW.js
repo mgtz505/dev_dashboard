@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import "../styles/calendarw.css";
 import Reminder from "./Reminder";
+import ModalContainer from "./ModalContainer";
 
 
 const CalendarW = () => {
@@ -20,11 +21,12 @@ const CalendarW = () => {
             <div className="banner-container">
                 <h2>Reminders</h2>
             </div>
+            <ModalContainer />
             <div className="calendar-container">
                 <Calendar className="calendar" onChange={setDate} value={date}/>
             </div>
             {date ? (
-            <div>
+            <div className="reminder-body-start">
             <h3>Selected Date: {handleDate(date)}</h3>
             <Reminder date={handleDate(date)} />
             </div>

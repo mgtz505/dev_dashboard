@@ -4,8 +4,14 @@ body {
 .calendar {
     height: 40vh;
     width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 .calendar-container {
-    /* margin-top: -20vh; */
+    position: absolute;
+    margin-top: 2vh;
+
+}
+
+.reminder-body-start {
+    position: static;
 }

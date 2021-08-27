@@ -26,6 +26,7 @@ const Reminder = ({date}) => {
     }
   
 return (
+    <>
         <div className="reminder-form-container">
             <form onSubmit={handleSubmit}>
                 <input 
@@ -35,6 +36,7 @@ return (
                 onChange={(e) => setValue(e.target.value)}>
                 </input>
             </form>
+        </div>
             <div>
                 {reminders.map((reminder, index) => {
                     return (
@@ -45,7 +47,8 @@ return (
                     )
                 })}
             </div>
-        </div>
+        
+        </>
     );
 };
 

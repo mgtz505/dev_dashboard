@@ -1,10 +1,16 @@
 .reminder-container {
-    margin: 2vh auto;
+    margin: auto;
+    margin-top: 5vh;
     padding: 5px;
     width: 80%;
     height: 14vh;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     background: whitesmoke;
+    /* overflow: auto; */
 }
 
+.reminder-form-container {
+    position: static;
+    margin-top: 10vh;
+}
