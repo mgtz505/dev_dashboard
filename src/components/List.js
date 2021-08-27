@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/list.css";
 import Count from "./Count";
+import ModalContainer from './ModalContainer';
 
 
 const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
@@ -81,6 +82,7 @@ const handleComplete = (index) => {
         <div className="widgit-tall">
             <div className="banner-container">
             <h2>Tasks to Complete</h2>
+            <ModalContainer />
             </div>
             <Count count={count}/>
             <TodoForm
