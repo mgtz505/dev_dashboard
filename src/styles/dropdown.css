@@ -12,8 +12,8 @@
     border-radius: 10px;
     position: absolute;
     top: 10vh;
-    left: 5px;
-    width: 35%;
+    left: 1vw;
+    width: 93%;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
@@ -57,6 +57,9 @@
     width: 6vw;
     border:2px solid #2F3E46;
     margin: 0 auto 5px;
+    position: absolute;
+    bottom: 0;
+    left: 12vw;
   }
 
 
