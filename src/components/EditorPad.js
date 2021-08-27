@@ -4,10 +4,13 @@ import "codemirror/theme/duotone-light.css";
 import "codemirror/mode/javascript/javascript";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 import "../styles/editorpad.css";
+import ModalContainer from "./ModalContainer";
 
 
 const EditorPad = (props) => {
 
+    const description = "Save any JS code for later use or use this as a simple text editor for saving links"
+    const details = ["Numerical line headers automatically generate"]
     const {
         language,
         displayName,
@@ -21,6 +24,7 @@ const EditorPad = (props) => {
 
     return (
         <div className="widgit">
+            <ModalContainer title="JS Scratchpad" header="For all your code snippets" description={description} details={details}/>
             
             <div className="editor-container">
                 
