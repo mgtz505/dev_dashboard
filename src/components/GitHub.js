@@ -2,6 +2,7 @@ import React, { useState ,useEffect } from 'react';
 import { Octokit } from "@octokit/core";
 import "../styles/Github.css";
 import formatDate from  "./formatDate";
+import ModalContainer from "./ModalContainer";
 
 const KEY = process.env.REACT_APP_GH_KEY;
 
@@ -11,6 +12,9 @@ const GitHub = () => {
     const [displayName, setDisplayName] = useState("");
     const [commits, setCommits] = useState([]);
     const octokit = new Octokit({auth: KEY });
+
+const description="Type in the name of one of your repo's names and see your ten most recent commits, including timestamps as well as a link to the commit on Github."
+const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by clicking 🔄", "The main text body will be your commit message"]
 
     useEffect(() => {
         const owner = "mgtz505"
@@ -48,7 +52,7 @@ const GitHub = () => {
             <div className="banner-container">
             <h2>GitHub Commit Buddy</h2>
             </div>
-           
+           <ModalContainer title="GitHub Commit Buddy" header="Quickly see and access your projects' commits" description={description} details={details}/>
             <div className="input-field">
                 <form
                 onSubmit={handleSubmit}
