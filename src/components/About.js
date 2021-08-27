@@ -8,7 +8,12 @@ const About = () => {
         <div className="aboutPage">
 
             <h2>About Dev Dashboard</h2>
-     
+        
+        <div>
+            <h3>Dev Dasboard keeps you on-track and productive while you code</h3>
+            
+        </div>
+
         </div>
     );
 };
