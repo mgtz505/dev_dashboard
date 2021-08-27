@@ -1,5 +1,41 @@
 .aboutPage {
-    height: 100vh;
+    height: 70vh;
+}
+
+.about-container {
+    z-index: 1;
+    height: 60vh;
+    width: 90%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+}
+
+.about-text-container {
+    width: 70%;
+    /* display: grid; */
+}
+.about-image-container {
+    position: relative; 
+    margin-top: 20vh;
+    width: 100%
     
 }
 
+.about-header {
+    margin-left: 5vh;
+}
+
+li {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.about-image {
+    width: 90%;
+    height:70%;
+    margin: auto 100px auto 0;
+    border-radius: 10px;
+}

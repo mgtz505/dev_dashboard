@@ -6,16 +6,13 @@ import ModalContainer from './ModalContainer';
 
 const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
     return (
-        <div className="todo-container">
+        <div className="todoContainer">
                 <div 
-                className="todo-entry"
                 style={{textDecoration: todo.isComplete ? "line-through" : ""}}
                 >               
                     <h3 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h3>
-                    <div className="control-panel">
-                        <button className="function-button-todo" onClick={() => handleComplete(index)}>✔️</button>
-                        <button className="function-button-todo" onClick={() => handleDelete(index)}>🗑</button>
-                    </div>
+                        <button className="function-button--todoBtn" onClick={() => handleComplete(index)}>✔️</button>
+                        <button className="function-button--todoBtn" onClick={() => handleDelete(index)}>🗑</button>
                 </div>
         </div>
     )
@@ -32,11 +29,10 @@ const handleSubmit = (e) => {
 }
 
     return (
-        <div className="todo-form">
+        <div>
             <form
             onSubmit={handleSubmit}>
                 <input
-                className="todo-input" 
                 type="text"
                 placeholder="New Task..."
                 value={value}

@@ -25,6 +25,21 @@ background-color: #CAD2C5;
 position: relative;
 }
 
+.widgit-tall {
+  box-shadow: 0 12px 6px 0 rgba(0,0,0,0.8);
+  border-radius: 10px;
+  transition: 0.3s;
+  width: 30%;
+  margin: 0 2vh 5vh 2vh;
+  float: left;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  overflow: auto;
+  height: 65vh;
+  background-color: #CAD2C5;
+  position: relative;
+  }
+  
 .widgit-long {
   box-shadow: 0 12px 6px 0 rgba(0,0,0,0.8);
   border-radius: 10px;
@@ -40,20 +55,6 @@ position: relative;
   position: relative;
   }
 
-  .widgit-tall {
-    box-shadow: 0 12px 6px 0 rgba(0,0,0,0.8);
-    border-radius: 10px;
-    transition: 0.3s;
-    width: 30%;
-    margin: 0 2vh 5vh 2vh;
-    float: left;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    overflow: auto;
-    height: 65vh;
-    background-color: #CAD2C5;
-    position: relative;
-    }
 
   input {
     border: 2px solid #52796F;

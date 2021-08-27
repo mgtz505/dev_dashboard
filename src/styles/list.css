@@ -1,4 +1,4 @@
-.todo-container {
+.todoContainer {
     margin: 2vh auto;
     padding: 5px;
     width: 50%;
@@ -8,7 +8,7 @@
     background: whitesmoke;
 }
 
-.function-button-todo {
+.function-button--todoBtn {
     background: whitesmoke;
   color: white;
   border-radius: 90px;
