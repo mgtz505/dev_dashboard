@@ -6,7 +6,7 @@
   
   .menu {
     background: white;
-    height: 39vh;
+    height: 34vh;
     font-weight: bold;
     overflow: auto;
     border-radius: 10px;
@@ -19,7 +19,6 @@
     visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-    /* overflow: auto; */
   }
   .menu.active {
     opacity: 1;
@@ -45,8 +44,23 @@
     align-content: center;
   }
   
+  .function-button-showNews {
+    background: whitesmoke;
+    color: white;
+    border-radius: 90px;
+    cursor: pointer;
+    padding: 4px 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: none;
+    vertical-align: middle;
+    transition: box-shadow 0.4s ease;
+    width: 6vw;
+    border:2px solid #2F3E46;
+    margin: 0 auto 5px;
+  }
 
-  .triggerButton:hover {
+
+  /* .triggerButton:hover {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   }
   
@@ -55,7 +69,7 @@
     vertical-align: middle;
     font-size: 18px;
     margin: 0 10px;
-  }
+  } */
   .grow {
     transition: all 0.2s ease-in-out;
   }

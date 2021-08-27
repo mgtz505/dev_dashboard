@@ -28,7 +28,7 @@ const DropDown = ({ selectType }) => {
     const categories = ["Arts", "Automobiles", "Books", "Business", "Fashion", "Food", "Health", "Home", "Insider", "Magazine", "Movies", "Nyregion", "Obituaries", "Opinion","Politics", "Realestate", "Science", "Sports", "Sundayreview", "Technology", "Theater", "T-magazine", "Travel", "Upshot", "US", "World"]
     return (
         <div className="DropDown-MenuContainer">
-            <button onClick={onClick} className="function-button">
+            <button onClick={onClick} className="function-button-showNews">
             <span>📰</span>
             </button>
             <nav

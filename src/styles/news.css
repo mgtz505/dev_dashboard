@@ -1,7 +1,7 @@
 .story-container {
-    margin: 5vh 3vh 3vh 0;
+    margin: 2vh 3vh 3vh 4vw;
     padding: 10px;
-    width: 62%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1.5fr  2.5fr;
     grid-template-rows: 1;
@@ -12,9 +12,5 @@
 }
 .story-container:hover {
     box-shadow: 0 8px 16px 0 rgba(98,0,0,0.2);
-}
-
-.story-image {
-    border-radius: 5px;
 }
 
