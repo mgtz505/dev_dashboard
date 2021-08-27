@@ -10,10 +10,10 @@ padding: 2px;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 border-radius: 10px;
 transition: 0.3s;
-width: 80%;
+width: 70%;
 overflow: auto;
 height: 22vh;  
-margin: 2vh auto 2vh;
+margin: 2vh 2vh;
 line-height: 1; 
 background: whitesmoke; 
 }
