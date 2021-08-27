@@ -13,8 +13,8 @@ const Todo = ({ todo, index, handleComplete, handleDelete, displayIndex }) => {
                 >               
                     <h3 key={index}> {displayIndex ? index + 1 + ")" : null} {todo.text}</h3>
                     <div className="control-panel">
-                        <button className="function-button" onClick={() => handleComplete(index)}>✔️</button>
-                        <button className="function-button" onClick={() => handleDelete(index)}>🗑</button>
+                        <button className="function-button-todo" onClick={() => handleComplete(index)}>✔️</button>
+                        <button className="function-button-todo" onClick={() => handleDelete(index)}>🗑</button>
                     </div>
                 </div>
         </div>

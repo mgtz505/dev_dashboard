@@ -63,7 +63,7 @@ console.log(weatherData)
                    <h4>Wind Speed: {weatherData.current_condition[0].windspeedMiles} mph</h4>
                    </div>
                </div>
-               <div className="weather-container">
+               <div className="weather-container-wc2">
                     <h3 className="container-header">Today</h3>
                     <div className="grouping">
                         <h4>High: {weatherData.weather[0].maxtempF}°F | {weatherData.weather[0].maxtempC}°C </h4>
