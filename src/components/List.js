@@ -52,6 +52,9 @@ const [todos, setTodos] = useState([]);
 const [count, setCount] = useState(0);
 const [displayIndex, setDisplayIndex] = useState(false);
 
+const description = "This is as simple as it gets: a handy list to help you tackle (and mark-off) today's tasks."
+const details = ["Click on the bold check mark to toggle an item on your list as complete.", "Clicking on the trash bin will remove the task from the list.", "You can apply numerical headers to your list by clicking the numbers button"]
+
 const addTodo = (text, isComplete = false) => {
     const newTodos = [...todos, { text, isComplete}];
     setTodos(newTodos);
@@ -82,7 +85,7 @@ const handleComplete = (index) => {
         <div className="widgit-tall">
             <div className="banner-container">
             <h2>Tasks to Complete</h2>
-            <ModalContainer />
+            <ModalContainer title="To Do List" header="What Needs to Get Done?" description={description} details={details} />
             </div>
             <Count count={count}/>
             <TodoForm

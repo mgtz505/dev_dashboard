@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import "../styles/modal.css"
 
-const Modal = ({ title, header, description, detail }) => {
+const Modal = ({ title, header, description, details }) => {
     
     const [modal, setModal] = useState(false);
     const Toggle = () => setModal(!modal)
 
-console.log(modal)
+console.log(details)
 
     return (
         <>
@@ -20,9 +20,15 @@ console.log(modal)
                     <h2 className="modal-title">{title}</h2>
                     
                 <main className="modal-content">
-                    <h4>{header}</h4>
-                    <h6>{description}</h6>
-                    <p>{detail}</p>
+                    <h3>{header}</h3>
+                    <h4>{description}</h4>
+                    <div className="detail-container">
+                   {details.map((detail) => {
+                       return (
+                           <h5>✔️ {detail}</h5>
+                       )
+                   })}
+                    </div>
                 </main>
                 <button className="function-button"
                         onClick={() => Toggle()}>🚫
