@@ -59,7 +59,7 @@ useEffect(() => {
                 </div>
                     {paused ? <button
                     onClick={() => handleReset()}
-                    className="function-button" 
+                    className="function-button-reset" 
                     >🔄</button> : null}
                     <button className="function-button" onClick={() => setPaused(!paused)}>⏯️</button>
             </div>
