@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from "axios";
 import "../styles/motivation.css"
+import ModalContainer from "./ModalContainer";
 
 const Motivation = () => {
     const [photo, setPhoto] = useState();
@@ -8,6 +9,11 @@ const Motivation = () => {
 
 const URL_PHOTO = "https://picsum.photos/300/200.jpg";
 const URL_QUOTE = "https://type.fit/api/quotes";
+
+
+const description = "Click the 🌟 to display a quote and photo pairing."
+const details = ["Quotes provided via type.fit; photos via picsum", "Bored of the current pairing? Click 🌟 again!"]
+
 
 const handleRequest = useCallback(() => {
     setPhoto();
@@ -41,6 +47,7 @@ console.log(quote)
 
     return (
         <div className="widgit">
+            <ModalContainer title="Let's Get Motivated!" header="For when the coffee just won't cut it..." description={description} details={details}/>
             <div className="banner-container">
             <h2>Get Motivated</h2>
             </div>
