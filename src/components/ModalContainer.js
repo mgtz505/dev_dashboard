@@ -10,7 +10,7 @@ console.log(modal)
 
     return (
         <>
-        <button className="function-button" onClick={() => Toggle()}>ℹ️</button>
+        <button className="modal-button" onClick={() => Toggle()}>ℹ️</button>
 
         {
         modal ? (

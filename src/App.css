@@ -4,7 +4,6 @@ width: 100%;
 background-color: #84A98C;
 color: #7b5673;
 font-family: 'Lato', sans-serif;
-
 }
 
 .App {
@@ -23,6 +22,7 @@ grid-template-rows: 1fr 1fr;
 overflow: auto;
 height: 50vh;
 background-color: #CAD2C5;
+position: relative;
 }
 
 .widgit-long {
@@ -37,6 +37,7 @@ background-color: #CAD2C5;
   overflow: auto;
   height: 50vh;
   background-color: #CAD2C5;
+  position: relative;
   }
 
   .widgit-tall {
@@ -51,6 +52,7 @@ background-color: #CAD2C5;
     overflow: auto;
     height: 80vh;
     background-color: #CAD2C5;
+    position: relative;
     }
 
   input {
@@ -111,8 +113,6 @@ a:active {
   margin-bottom: 2vh;
 }
 
-
-
 .function-button {
   background: whitesmoke;
   color: white;
@@ -133,5 +133,22 @@ button:hover {
   border: 2px solid whitesmoke;
 }
 
-
+.modal-button {
+  background: whitesmoke;
+  color: white;
+  border-radius: 90px;
+  cursor: pointer;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  vertical-align: middle;
+  transition: box-shadow 0.4s ease;
+  width: 6vw;
+  border:2px solid #2F3E46;
+  margin: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  
+}
 
