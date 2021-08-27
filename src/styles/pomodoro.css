@@ -1,6 +1,8 @@
 .time-text {
     font-size: 12vh;
-    margin-bottom: 8vh;
+    position: absolute;
+    left: 6vw;
+    bottom: 15vh;
 }
 
 .function-button-reset {
@@ -15,5 +17,7 @@
     transition: box-shadow 0.4s ease;
     width: 6vw;
     border:2px solid #2F3E46;
-    margin: 0 auto 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 12vw;
   }
