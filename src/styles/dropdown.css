@@ -5,18 +5,21 @@
   }
   
   .menu {
-    background: #ffffff;
-    /* opacity: 0.33; */
-    border-radius: 8px;
+    background: white;
+    height: 39vh;
+    font-weight: bold;
+    overflow: auto;
+    border-radius: 10px;
     position: absolute;
-    top: 60px;
-    right: 5px;
+    top: 10vh;
+    left: 5px;
     width: 35%;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    /* overflow: auto; */
   }
   .menu.active {
     opacity: 1;
@@ -42,19 +45,7 @@
     align-content: center;
   }
   
-  /* .function-button {
-    background: black;
-    color: white;
-    border-radius: 90px;
-    cursor: pointer;
-    padding: 4px 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    border: none;
-    vertical-align: middle;
-    transition: box-shadow 0.4s ease;
-    width: 70%;
-  } */
-  
+
   .triggerButton:hover {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   }
