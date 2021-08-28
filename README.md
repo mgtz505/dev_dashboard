@@ -7,6 +7,21 @@ Dev Dashboard is a productivity dashboard to help developers stay focused while 
 Dev Dashboard is intended to be a pinned tab in your browser! If you have a multi-monitor set-up, it's a perfect page to keep displayed on an auxillary screen while you're working. All widgets are simultaneously available for your use. Use any widgets that you think can help you be a more productive developer.
 
 ### About This App
+
+## About my Development Process:
+
+All widgets were effectively treated as indpendent apps, utilizing CSS modules for styling and state siloed to appropriate components. Simpler widgets, such as the pomodoro timer, served as a useful template for skeletoning out potential layouts for the more complex widgets. Once a widget was functional and the layout was presentable enough for a naive user to reasonably understand the widget's use, I proceeded to build neighboring widgits. Detailed styling was applied afterward. 
+
+
+ In addition to requesting data from various APIs, Dev Dashboard additionally relies upon several node packages, namely react-codemirror2 (used in Javascript Scratchpad) and react-calendar (used in the Reminder widget). I knew from the get-go that I wanted to incorporate GitHub's API in this project. I chose to build a commit tracker as this is the GH page I often find myself checking while working on a more extensive project. Should a user decided that they want to see a given commit's code changes, they can follow the provided link to their commit on GH. 
+
+ I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then rendered. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
+
+
+
+
+## Technical Details 
+
 Dev Dashboard is a React single-page application. I utilized NPM as my package manager for this project. My dependencies are listed below:
 ```
   "version": "0.1.0",
@@ -48,20 +63,6 @@ Dev Dependencies are as follows:
   ```
 
 
-## About my Development Process:
-
-All widgets were effectively treated as indpendent apps, utilizing CSS modules for styling and state siloed to appropriate components. Simpler widgets, such as the pomodoro timer, served as a useful template for skeletoning out potential layouts for the more complex widgets. Once a widget was functional and the layout was presentable enough for a naive user to reasonably understand the widget's use, I proceeded to build neighboring widgits. Detailed styling was applied afterward. 
-
-
- In addition to requesting data from various APIs, Dev Dashboard additionally relies upon several node packages, namely react-codemirror2 (used in Javascript Scratchpad) and react-calendar (used in the Reminder widget). I knew from the get-go that I wanted to incorporate GitHub's API in this project. I chose to build a commit tracker as this is the GH page I often find myself checking while working on a more extensive project. Should a user decided that they want to see a given commit's code changes, they can follow the provided link to their commit on GH. 
-
- I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then rendered. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
-
-
-
-
-## Technical Details 
-
 ### Testing
 Dependencies Installed:
 - Jest
@@ -69,6 +70,7 @@ Dependencies Installed:
 - Expect 
 - identity-obj-proxy (used for handling of my CSS modules by Jest's moduleNameMapper)
 
+I was originally conducting my testing with Mocha, but switched to Jest due to a difficulty I encountered with Babel's interpretation (or rather, inability to interpret) JSX. After spending a substantial amount of time trying to implement various solultions, I switched to Jest. Testing with Jest was great and I'm glad to have had the exposure to testing practices. While I didn't abide by TDD for this project, I can certainly see the merits of taking that approach and may try and do so on future projects. 
 
 
 ### Integration Testing
