@@ -10,7 +10,7 @@ const About = () => {
             <br></br>
         <div className="about-container">
             <div className="about-text-container">
-            <h2 className="about-header">Dev Dasboard keeps you on-track and productive while you code</h2>
+            <h2 className="about-header">Dev Dasboard keeps you <span style={{textDecoration: "underline"}}>focused and productive</span> while you code</h2>
                 <h3>Features:</h3>
                 <ul>
                     <li>✔️ Easily Distracted? Focus with built-in productivity widgets, including a handy pomodoro timer and scratchpad</li>

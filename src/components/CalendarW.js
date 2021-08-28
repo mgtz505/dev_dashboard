@@ -25,12 +25,12 @@ const CalendarW = () => {
             <div className="calendar-container">
                 <Calendar className="calendar" onChange={setDate} value={date}/>
             </div>
-            {date ? (
+           
             <div className="reminder-body-start">
-            <h3>Selected: {handleDate(date)}</h3>
+            {date ? <h3>Selected: {handleDate(date)}</h3> : null}
             <Reminder date={handleDate(date)} />
             </div>
-            ) : null}
+           
 
         </div>
     );
