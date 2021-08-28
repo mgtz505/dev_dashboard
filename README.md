@@ -8,6 +8,8 @@ Dev Dashboard is intended to be a pinned tab in your browser! If you have a mult
 
 ### About This App
 
+Building Dev Dashboard was a great experience. I'm proud of the work I put into this project and had a lot of fun setting up the app architecture and styling the app's widgets. Technical details about my this application can be found below. 
+
 ## About my Development Process:
 
 All widgets were effectively treated as indpendent apps, utilizing CSS modules for styling and state siloed to appropriate components. Simpler widgets, such as the pomodoro timer, served as a useful template for skeletoning out potential layouts for the more complex widgets. Once a widget was functional and the layout was presentable enough for a naive user to reasonably understand the widget's use, I proceeded to build neighboring widgits. Detailed styling was applied afterward. 
@@ -18,7 +20,40 @@ All widgets were effectively treated as indpendent apps, utilizing CSS modules f
  I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then rendered. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
 
 
+### Accessory Functions 
 
+These are pretty self-explanatory. I made these small funcitons to format some string data present in the application. Importantly, these simple functions served as a great introduction to testing due to their simplicity. 
+
+Format Date: 
+```
+export default function formatDate(str) {
+    let pivot = str.indexOf("T")
+    let end = str.indexOf("Z")
+    const date = str.slice(0,pivot)
+    const time = str.slice(pivot + 1,end)
+    return [date,time]
+    }
+```
+Format Time:
+```
+
+export default function formatTime(str){
+    if (str == 0){
+        return "Midnight"
+    } else {
+        if (str.length === 3) {
+            return `${str.slice(0,1)}:00 AM`
+        } else {
+            if (str == 1200) {
+                return "Noon"
+            }
+            if (str.length >= 4) {
+                return `${str.slice(0,2) - 12}:00 PM`
+            }
+        }
+    }
+}
+```
 
 ## Technical Details 
 
