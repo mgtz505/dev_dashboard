@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Link } from "react-router-dom";
 import "../styles/about.css";
 import about from "../styles/images/about.jpg"
 
