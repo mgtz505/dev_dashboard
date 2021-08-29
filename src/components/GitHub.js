@@ -18,9 +18,7 @@ const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by
 
     useEffect(() => {
         const owner = "mgtz505"
-        console.log("This is the repoName:", repoName)
         const repo = repoName
-        console.log("This is the repo variable:", repo)
         const perPage = 10;
         
         if(repoName && callAPI){
@@ -28,12 +26,9 @@ const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by
             const fiveMostRecentCommits = octokit.request(
                 `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
                 ).then((response) => {
-                    console.log(response.data)
                     setCommits(response.data);
                     setCallAPI(false);
-                    setDisplayName(repoName);
-                    // setRepoName("");
-                    
+                    setDisplayName(repoName);                    
                 });
         }
     },[callAPI])

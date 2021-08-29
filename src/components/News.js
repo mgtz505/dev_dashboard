@@ -46,7 +46,6 @@ const details = ["All content via the New York Times API", "Clicking a link will
         return (
           <div key={index} className="story-container">
             <h3 className="story-title">{story.title}</h3>
-            {/* <img alt="story-image" src={story.multimedia[2].url}/> */}
             <h4 className="story-abstract">{story.abstract}</h4>
             <a className="story-link grow" target="_blank" rel="noreferrer" href={story.short_url}>View on NYT</a>
           </div>

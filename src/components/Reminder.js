@@ -5,17 +5,13 @@ const Reminder = ({date}) => {
     const [reminders, setReminders] = useState([]);
     const [value, setValue] = useState("");
 
-    // console.log(date, value)
-
     const addReminder = (date,text) => {
         const newReminders = [...reminders, {date, text}];
         setReminders(newReminders);
         setValue("");
     }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(date, value)
         addReminder(date, value);
     }
 

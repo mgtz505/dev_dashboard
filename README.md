@@ -8,7 +8,7 @@ Dev Dashboard is intended to be a pinned tab in your browser! If you have a mult
 
 Building Dev Dashboard was a great experience. I'm proud of the work I put into this project and had a lot of fun setting up the app architecture and styling the app's widgets. Technical details about this application can be found below. 
 
-### My Development Process:
+#### My Development Process:
 
 All widgets were effectively treated as indpendent apps, utilizing CSS modules for styling and state siloed to appropriate components. Simpler widgets, such as the pomodoro timer, served as a useful template for skeletoning out potential layouts for the more complex widgets. Once a widget was functional and the layout was presentable enough for a naive user to reasonably understand the widget's use, I proceeded to build neighboring widgits. Detailed styling was applied afterward. App.css contains global styles for Dev dashboard. Each widget additionally has a respective ___.css file within the styles folder where component-specific styles can be applied. 
 
@@ -19,7 +19,50 @@ All widgets were effectively treated as indpendent apps, utilizing CSS modules f
 
 #### A Brief Look at Some Interesting Components
 
-The volume of code in this project is pretty substantial relative to other projects I've taken on. While I was building this app, I really strived to avoid "code smells", namely needlessly repetitive code. Some snippets that I think are particularly worth highlighting can be found below.
+The volume of code in this project is pretty substantial relative to other projects I've taken on. While I was building this app, I really strived to avoid "code smells", namely needlessly repetitive code. Some snippets that I think are worth highlighting can be found below.
+
+This snippet can be found in Remainder.js. This code is responsible for mutations of the reminder object, an array of which constitutes a unit of state. addReminder handles a user's submitted text (string) and incorporates it into an object which is then appended to an array of these reminder objects. handleDelete is triggered by a user clicking a button rendered in the mapped remainder containers. As you can see, the index of the reminder whose button was clicked is passed to the function, then the reminder array is spliced starting at the passed-in index. 
+```
+const Reminder = ({date}) => {
+    const [reminders, setReminders] = useState([]);
+    const [value, setValue] = useState("");
+
+    const addReminder = (date,text) => {
+        const newReminders = [...reminders, {date, text}];
+        setReminders(newReminders);
+        setValue("");
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addReminder(date, value);
+    }
+
+    const handleDelete = (index) => {
+        const newReminders = [...reminders];
+        newReminders.splice(index,1);
+        setReminders(newReminders);
+    }
+```
+
+The snippet below shows my use of Github's Octokit library for managing my GET requests to the API. I wrapped my call to the API in a useEffect hook whose dependency array contains callAPI, a boolean that triggers an API request if the user's input, repoName is not null. 
+```
+    useEffect(() => {
+        const owner = "mgtz505"
+        const repo = repoName
+        const perPage = 10;
+        
+        if(repoName && callAPI){
+
+            const fiveMostRecentCommits = octokit.request(
+                `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
+                ).then((response) => {
+                    setCommits(response.data);
+                    setCallAPI(false);
+                    setDisplayName(repoName);                    
+                });
+        }
+    },[callAPI])
+```
 
 
 
