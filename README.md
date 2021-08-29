@@ -1,6 +1,6 @@
 # Welcome to Dev Dashboard
 
-Dev Dashboard is a productivity dashboard to help developers stay focused while coding. I began building Dev Dashboard after reflecting on which "simple widgets" I used on a regular basis while programming (namely text editors, a reminder/to-do app and a pomodoro timer) and deciding that bundling these applications into a single web-app would make for a great project. It's been great to see my front end development skills evolve over the past several months, and while I know that I'll be making more projects soon, working on Dev Dashboard felt like a great measure of my progress. 
+Dev Dashboard is a productivity application to help developers stay focused while coding. I began building Dev Dashboard after reflecting on which "simple widgets" I used on a regular basis while programming (namely text editors, a reminder/to-do app and a pomodoro timer) and deciding that bundling these applications into a single web-app would make for a great project. It's been great to see my front end development skills evolve over the past several months, and while I know that I'll be making more projects soon, working on Dev Dashboard felt like a great measure of my progress. 
 
 ## How does Dev Dashboard Work? 
 
@@ -17,7 +17,7 @@ All widgets were effectively treated as indpendent apps, utilizing CSS modules f
 
  I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then mapped. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
 
-#### A Brief Look at Some Interesting Components
+#### A Brief Look at Some Interesting Code Snippets
 
 The volume of code in this project is pretty substantial relative to other projects I've taken on. While I was building this app, I really strived to avoid "code smells", namely needlessly repetitive code. Some snippets that I think are worth highlighting can be found below.
 
@@ -44,7 +44,7 @@ const Reminder = ({date}) => {
     }
 ```
 
-The snippet below shows my use of Github's Octokit library for managing my GET requests to the API. I wrapped my call to the API in a useEffect hook whose dependency array contains callAPI, a boolean that triggers an API request if the user's input, repoName is not null. 
+The snippet below shows my use of Github's Octokit library for managing my GET requests to the API. I wrapped my call to the API in a useEffect hook whose dependency array contains callAPI, a boolean that triggers an API request if the user's input, repoName is not null.
 ```
     useEffect(() => {
         const owner = "mgtz505"
@@ -152,11 +152,7 @@ Dependencies Installed:
 
 I was originally conducting my testing with Mocha, but switched to Jest due to a difficulty I encountered with Babel's interpretation (or rather, inability to interpret) JSX. After spending a substantial amount of time trying to implement various solultions, I switched to Jest. Testing with Jest was great and I'm glad to have had the exposure to testing practices. While I didn't abide by TDD for this project, I can certainly see the merits of taking that approach and may try and do so on future projects. 
 
-
-### Integration Testing
-- Aim is to verify that multiple units can work together.
-
-### Unit Testing
+### Use of Unit Testing
 - Aim is to verify correct functionality for individual functions and components 
     
 A great and simple example of a successfully executed unit test is seen in createDate.spec.js. The tested function is used as a "helper" and makes some of the outputed JSON data from the GitHub API more palatable. 
@@ -174,9 +170,34 @@ describe("formatDate function", () => {
     });
 });
 ```
+I knew from first-hand experience that the conventional date returned from the GitHub API would be formatted properly by the funciton being tested. As such, I chose to use an edge case for this test to determine if the function could handle an odd case, albeit one that I don't think the API would ever return. Regardless, this was an informative test to run. 
 
 #### Shallow Rendering
-Using TestUtils from the react-addons package, I constructed shallow renderings for some of my individual components. 
+Using TestUtils from the react-addons package, I constructed shallow renderings for some of my individual components. I created a shallow render of List.js to explore this testing technique. My code can be seen below.
+
+```
+let container = null;
+beforeEach(() => {
+  // setup a DOM element as a render target
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // cleanup on exiting
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("Renders the To-Do-List Component", () => {
+  act(() => {
+    render(<List />, container);
+    expect(container).toBeTruthy();
+  });
+``` 
+
+
 
 
 ### Static Testing

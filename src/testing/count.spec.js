@@ -1,5 +1,4 @@
 import React from "react";
-import renderer from 'react-test-renderer';
 import expect from "expect";
 import Count from "../components/Count";
 import { render, unmountComponentAtNode } from "react-dom";
@@ -23,7 +22,7 @@ it("renders with or without a count prop", () => {
   act(() => {
     render(<Count />, container);
   });
-  expect(container.textContent).toBe("No Tasks Remaining");
+  expect(container.textContent).toBe("No Tasks Remaining!");
 
   act(() => {
     render(<Count count={5} />, container);
