@@ -6,23 +6,26 @@ Dev Dashboard is a productivity dashboard to help developers stay focused while 
 
 Dev Dashboard is intended to be a pinned tab in your browser! If you have a multi-monitor set-up, it's a perfect page to keep displayed on an auxillary screen while you're working. All widgets are simultaneously available for your use. Use any widgets that you think can help you be a more productive developer.
 
-### About This App
+Building Dev Dashboard was a great experience. I'm proud of the work I put into this project and had a lot of fun setting up the app architecture and styling the app's widgets. Technical details about this application can be found below. 
 
-Building Dev Dashboard was a great experience. I'm proud of the work I put into this project and had a lot of fun setting up the app architecture and styling the app's widgets. Technical details about my this application can be found below. 
+### My Development Process:
 
-## About my Development Process:
+All widgets were effectively treated as indpendent apps, utilizing CSS modules for styling and state siloed to appropriate components. Simpler widgets, such as the pomodoro timer, served as a useful template for skeletoning out potential layouts for the more complex widgets. Once a widget was functional and the layout was presentable enough for a naive user to reasonably understand the widget's use, I proceeded to build neighboring widgits. Detailed styling was applied afterward. App.css contains global styles for Dev dashboard. Each widget additionally has a respective ___.css file within the styles folder where component-specific styles can be applied. 
 
-All widgets were effectively treated as indpendent apps, utilizing CSS modules for styling and state siloed to appropriate components. Simpler widgets, such as the pomodoro timer, served as a useful template for skeletoning out potential layouts for the more complex widgets. Once a widget was functional and the layout was presentable enough for a naive user to reasonably understand the widget's use, I proceeded to build neighboring widgits. Detailed styling was applied afterward. 
-
-
+#### Incorporated APIs and Node Packages
  In addition to requesting data from various APIs, Dev Dashboard additionally relies upon several node packages, namely react-codemirror2 (used in Javascript Scratchpad) and react-calendar (used in the Reminder widget). I knew from the get-go that I wanted to incorporate GitHub's API in this project. I chose to build a commit tracker as this is the GH page I often find myself checking while working on a more extensive project. Should a user decided that they want to see a given commit's code changes, they can follow the provided link to their commit on GH. 
 
- I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then rendered. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
+ I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then mapped. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
+
+#### A Brief Look at Some Interesting Components
+
+The volume of code in this project is pretty substantial relative to other projects I've taken on. While I was building this app, I really strived to avoid "code smells", namely needlessly repetitive code. Some snippets that I think are particularly worth highlighting can be found below.
 
 
-### Accessory Functions 
 
-These are pretty self-explanatory. I made these small funcitons to format some string data present in the application. Importantly, these simple functions served as a great introduction to testing due to their simplicity. 
+#### Accessory Functions 
+
+These are pretty self-explanatory. I made these small functions to format some string data present in the application. Importantly, these simple functions served as a great introduction to testing due to their simplicity. 
 
 Format Date: 
 ```
@@ -36,7 +39,6 @@ export default function formatDate(str) {
 ```
 Format Time:
 ```
-
 export default function formatTime(str){
     if (str == 0){
         return "Midnight"
@@ -55,7 +57,7 @@ export default function formatTime(str){
 }
 ```
 
-## Technical Details 
+#### More Technical Details - Project Dependencies 
 
 Dev Dashboard is a React single-page application. I utilized NPM as my package manager for this project. My dependencies are listed below:
 ```
