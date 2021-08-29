@@ -1,6 +1,6 @@
 # Welcome to Dev Dashboard
 
-Dev Dashboard is a productivity dashboard to help developers stay focused while coding. I build Dev Dashboard after reflecting on which "simple widgets" I used on a regular basis while building (namely text editors, a reminder/to-do app and a pomodoro timer) and deciding that bundling these applications into a single web-app would make for a great project. 
+Dev Dashboard is a productivity dashboard to help developers stay focused while coding. I began building Dev Dashboard after reflecting on which "simple widgets" I used on a regular basis while programming (namely text editors, a reminder/to-do app and a pomodoro timer) and deciding that bundling these applications into a single web-app would make for a great project. It's been great to see my front end development skills evolve over the past several months, and while I know that I'll be making more projects soon, working on Dev Dashboard felt like a great measure of my progress. 
 
 ## How does Dev Dashboard Work? 
 
