@@ -100,6 +100,12 @@ export default function formatTime(str){
 }
 ```
 
+### Design
+
+I selected the project's color palette from [Coolers.co](https://coolors.co/cad2c5-84a98c-52796f-354f52-2f3e46) and additionally added #7b5673, the inverse color of the app's most prevelent background color, #84A98C. 
+
+[This project's wireframes](https://www.figma.com/file/SqJJKbN71XaLTWMoKJEsg7/Dev-Companion-Low-Fi-Wireframes?node-id=0%3A1) were constructed using Figma. I knew from the outset of this project that I would almost certainly encounter some scope creep as I'd get new features I'd want to integrate after exploring the APIs. I additionally knew that ensuring my layout was aesthetically pleasing and well-proportioned could be tricky if I decided to render more information than I had originally anticipated. As such, I stuck with low-fidelity wireframes for my planning process. 
+
 #### More Technical Details - Project Dependencies 
 
 Dev Dashboard is a React single-page application. I utilized NPM as my package manager for this project. My dependencies are listed below:
