@@ -170,7 +170,7 @@ describe("formatDate function", () => {
     });
 });
 ```
-I knew from first-hand experience that the conventional date returned from the GitHub API would be formatted properly by the funciton being tested. As such, I chose to use an edge case for this test to determine if the function could handle an odd case, albeit one that I don't think the API would ever return. Regardless, this was an informative test to run. 
+I knew from first-hand experience that the conventional date returned from the GitHub API would be formatted properly by the funciton being tested. As such, I chose to use an edge case for this test to determine if the function could handle an odd case, albeit one that I don't think the API would ever return. 
 
 #### Shallow Rendering
 Using TestUtils from the react-addons package, I constructed shallow renderings for some of my individual components. I created a shallow render of List.js to explore this testing technique. My code can be seen below.
@@ -196,7 +196,45 @@ it("Renders the To-Do-List Component", () => {
     expect(container).toBeTruthy();
   });
 ``` 
+This test was a great precedent for more complex unit tests I later implemented. As a brief example, the below test checks if the count component is properly rendering the desired value (passed in via props).
 
+```
+let container = null;
+beforeEach(() => {
+  // setup a DOM element as a render target
+  container = document.createElement("div");
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  // cleanup on exiting
+  unmountComponentAtNode(container);
+  container.remove();
+  container = null;
+});
+
+it("renders with or without a count prop", () => {
+  act(() => {
+    render(<Count />, container);
+  });
+  expect(container.textContent).toBe("No Tasks Remaining!");
+
+  act(() => {
+    render(<Count count={5} />, container);
+  });
+  expect(container.textContent).toBe("5 tasks remaining");
+
+  act(() => {
+    render(<Count count={100} />, container);
+  });
+  expect(container.textContent).toBe("100 tasks remaining");
+
+  act(() => {
+    render(<Count count={99999999} />, container);
+  });
+  expect(container.textContent).toBe("99999999 tasks remaining");
+});
+```
 
 
 
