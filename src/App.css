@@ -171,7 +171,7 @@ button:hover {
 }
 
 /* Small Laptop View */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   .widgit-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -185,9 +185,15 @@ button:hover {
     width: 95%;
     grid-column: span 2; 
   }
+
+  .about-container {
+    height: 70vh !important;
+    background-color: red;
+  }
+  .about-image {
+    width: 90% !important;
+  }
 }
-
-
 
 /* Tablet View */
 @media screen and (max-width: 800px) {
@@ -197,7 +203,7 @@ button:hover {
     grid-template-columns: 1fr 1fr;
   }
 
-  
+
   .widgit-tall, .widgit {
     width: 90%;
     height: 60vh;
@@ -216,6 +222,18 @@ button:hover {
     width: 10vw;
   }
 
+  .about-container {
+    height: 70vh !important;
+  }
+  .about-text-container {
+    width: 90% !important;
+    /* display: grid; */
+}
+  .about-image {
+    height: 40% !important;
+    margin-bottom: auto !important;
+  }
+
   .modalContainer {
     width: 100%;
     height: auto;
@@ -230,6 +248,11 @@ button:hover {
   body {
     height: 100%;
   }
+
+  .nav-bar {
+  
+    height: 10vh !important;
+}
 
   .widgit-grid {
     display: flex;
@@ -252,6 +275,19 @@ button:hover {
 
   .scratchpad {
     width: 90%;
+  }
+
+  .about-container {
+    display: grid important!;
+    grid-template-columns: 1fr !important;
+    font-size: 14px;
+  }
+  .about-text-container {
+    width: 90% !important;
+    margin: 0;
+  }
+  .about-image {
+    visibility: hidden;
   }
 
   /* Weather.js / Long Widgit */
