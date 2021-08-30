@@ -16,12 +16,12 @@ const HQ = () => {
         <div className="widgit-grid">
             <Pomodoro />
             <News />
-            <Motivation />
             <Editor />
-            <Weather />
-            <Github />
             <List />
             <CalendarW />
+            <Github />
+            <Motivation />
+            <Weather />
         </div>
         
     );

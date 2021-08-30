@@ -179,7 +179,6 @@ button:hover {
   }
   
   .widgit-tall, .widgit {
-    background-color: salmon;
     width: 90%;
     height: 60vh;
     margin: 2vh auto;
@@ -188,7 +187,9 @@ button:hover {
     width: 95%;
     grid-column: span 2; 
   }
-
-
+  .scratchpad {
+    width: 95%;
+    grid-column: span 2; 
+  }
   
 }
