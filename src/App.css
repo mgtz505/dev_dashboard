@@ -191,5 +191,41 @@ button:hover {
     width: 95%;
     grid-column: span 2; 
   }
+
+  .function-button, .modal-button, .modal-button-exit {
+    width: 10vw;
+  }
   
+}
+/* Large Mobile View */
+@media screen and (max-width: 450px) {
+
+  body {
+    height: 100%;
+  }
+
+  .function-button, .modal-button, .modal-button-exit, .todoBtn {
+    width: 20vw;
+  }
+
+
+  .widgit-grid {
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr; */
+    /* overflow: auto; */
+  }
+  
+  .widgit-tall, .widgit {
+    width: 90%;
+    height: 60vh;
+    margin: 2vh auto;
+  }
+  .widgit-long {
+    width: 90%;
+  }
+
+  .scratchpad {
+    width: 90%;
+  }
 }

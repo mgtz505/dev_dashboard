@@ -8,7 +8,7 @@
     background: whitesmoke;
 }
 
-.function-button--todoBtn {
+.function-button .todoBtn {
     background: whitesmoke;
   color: white;
   border-radius: 90px;
