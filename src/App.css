@@ -170,3 +170,25 @@ button:hover {
   margin: 0 auto 5px;
 }
 
+/* Tablet View */
+@media screen and (max-width: 800px) {
+  
+  .widgit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .widgit-tall, .widgit {
+    background-color: salmon;
+    width: 90%;
+    height: 60vh;
+    margin: 2vh auto;
+  }
+  .widgit-long {
+    width: 95%;
+    grid-column: span 2; 
+  }
+
+
+  
+}

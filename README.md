@@ -64,8 +64,6 @@ The snippet below shows my use of Github's Octokit library for managing my GET r
     },[callAPI])
 ```
 
-
-
 #### Accessory Functions 
 
 These are pretty self-explanatory. I made these small functions to format some string data present in the application. Importantly, these simple functions served as a great introduction to testing due to their simplicity. 
@@ -104,7 +102,7 @@ export default function formatTime(str){
 
 I selected the project's color palette from [Coolers.co](https://coolors.co/cad2c5-84a98c-52796f-354f52-2f3e46) and additionally added #7b5673, the inverse color of the app's most prevelent background color, #84A98C. 
 
-[This project's wireframes](https://www.figma.com/file/SqJJKbN71XaLTWMoKJEsg7/Dev-Companion-Low-Fi-Wireframes?node-id=0%3A1) were constructed using Figma. I knew from the outset of this project that I would almost certainly encounter some scope creep as I'd get new features I'd want to integrate after exploring the APIs. I additionally knew that ensuring my layout was aesthetically pleasing and well-proportioned could be tricky if I decided to render more information than I had originally anticipated. As such, I stuck with low-fidelity wireframes for my planning process. 
+[This project's wireframes](https://www.figma.com/file/SqJJKbN71XaLTWMoKJEsg7/Dev-Companion-Low-Fi-Wireframes?node-id=0%3A1) were constructed using Figma. I knew from the outset of this project that I would almost certainly encounter some scope creep as I'd get new features I'd want to integrate after exploring the APIs. I additionally knew that ensuring my layout was aesthetically pleasing and well-proportioned could be tricky if I decided to render more information than I had originally anticipated. As such, I stuck with low-fidelity wireframes for my planning process. I ensured that the models for my end-components were able to guide development and provide an easy-to-understand framework. Given the similar layouts for most of the widgets, there is not much variance in the wireframes.
 
 #### More Technical Details - Project Dependencies 
 
@@ -158,7 +156,7 @@ Dependencies Installed:
 
 I was originally conducting my testing with Mocha, but switched to Jest due to a difficulty I encountered with Babel's interpretation (or rather, inability to interpret) JSX. After spending a substantial amount of time trying to implement various solultions, I switched to Jest. Testing with Jest was great and I'm glad to have had the exposure to testing practices. While I didn't abide by TDD for this project, I can certainly see the merits of taking that approach and may try and do so on future projects. 
 
-### Use of Unit Testing
+#### Use of Unit Testing
 - Aim is to verify correct functionality for individual functions and components 
     
 A great and simple example of a successfully executed unit test is seen in createDate.spec.js. The tested function is used as a "helper" and makes some of the outputed JSON data from the GitHub API more palatable. 
@@ -242,7 +240,5 @@ it("renders with or without a count prop", () => {
 });
 ```
 
-
-
-### Static Testing
+#### Static Testing
 It goes without saying, but static testing (Addressing simple typos, errors) was provided by use of ESLint. In another pass at this appliction, utilizing Typescript would provide an additional degree of protection against some of these mistakes. 

@@ -23,7 +23,7 @@ const EditorPad = (props) => {
     }
 
     return (
-        <div className="widgit">
+        <div >
             <ModalContainer title="JS Scratchpad" header="For all your code snippets" description={description} details={details}/>
             
             <div className="editor-container">
