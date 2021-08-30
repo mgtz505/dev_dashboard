@@ -170,6 +170,25 @@ button:hover {
   margin: 0 auto 5px;
 }
 
+/* Small Laptop View */
+@media screen and (max-width: 1200px) {
+  .widgit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .widgit-tall, .widgit {
+    width: 90%;
+    height: 60vh;
+    margin: 2vh auto;
+  }
+  .widgit-long, .GH-conditional{
+    width: 95%;
+    grid-column: span 2; 
+  }
+}
+
+
+
 /* Tablet View */
 @media screen and (max-width: 800px) {
   
@@ -177,13 +196,14 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   
   .widgit-tall, .widgit {
     width: 90%;
     height: 60vh;
     margin: 2vh auto;
   }
-  .widgit-long {
+  .widgit-long, .GH-conditional{
     width: 95%;
     grid-column: span 2; 
   }

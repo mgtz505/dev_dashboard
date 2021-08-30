@@ -45,7 +45,7 @@ useEffect(() => {
     }, );
 
     return (
-        <div className="widgit">
+        <div className="widgit-tall">
           <ModalContainer title="Pomodoro Timer" header="For when time is of the essence!" description={description} details={details}/>
               <div className="banner-container">
                 <h2>Pomodoro Timer</h2>

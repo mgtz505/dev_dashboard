@@ -32,7 +32,7 @@ const details = ["All content via the New York Times API", "Clicking a link will
 
   return (
       <>
-    <div className = "widgit">
+    <div className = "widgit-tall">
       <ModalContainer title={"News via the New York Times"} header="Stay Informed!" description={description} details={details}/>
         <div className="banner-container">
           <h2>Top News from the NYT</h2>

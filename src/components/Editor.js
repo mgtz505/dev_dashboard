@@ -13,7 +13,7 @@ const Editor = () => {
     </html>
     `
     return (
-        <div className="widgit-tall scratchpad">
+        <div className="widgit-tall ">
             <EditorPad 
             langauge="javascript"
             displayName="Javascript"

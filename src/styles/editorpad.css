@@ -16,6 +16,8 @@ margin: 0
 }
 
 .plaintext-scratch {
-    margin-top: 2vh;
-    height: 60%;
+    height: 40%;
+    margin: 12% 5%;
+    border: 2px solid #7b5673;
+;
 }

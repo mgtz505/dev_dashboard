@@ -43,7 +43,7 @@ const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by
     console.log(displayName);
 
     return (
-        <div className="widgit">
+        <div className="widgit-tall GH-conditional">
             <div className="banner-container">
             <h2>GitHub Commit Buddy</h2>
             </div>
