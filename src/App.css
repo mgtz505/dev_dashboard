@@ -195,19 +195,21 @@ button:hover {
   .function-button, .modal-button, .modal-button-exit {
     width: 10vw;
   }
-  
+
+  .modalContainer {
+    width: 100%;
+    height: auto;
+    /* background-color: lawngreen; */
+  }
+
 }
+
 /* Large Mobile View */
 @media screen and (max-width: 450px) {
 
   body {
     height: 100%;
   }
-
-  .function-button, .modal-button, .modal-button-exit, .todoBtn {
-    width: 20vw;
-  }
-
 
   .widgit-grid {
     display: flex;
@@ -224,8 +226,26 @@ button:hover {
   .widgit-long {
     width: 90%;
   }
+  .function-button, .modal-button, .modal-button-exit, .todoBtn {
+    width: 20vw;
+  }
 
   .scratchpad {
     width: 90%;
+  }
+
+  /* Weather.js / Long Widgit */
+
+  .weather-container {
+    display: grid;
+    height: 30vh;
+  }
+  .weather-container-wc2 {
+    visibility: hidden !important;
+  }
+
+  .forecast-toggle {
+    visibility: hidden !important;
+    
   }
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import EditorPad from './EditorPad';
+import "../styles/editorpad.css";
+
 
 const Editor = () => {
 
@@ -11,7 +13,7 @@ const Editor = () => {
     </html>
     `
     return (
-        <div className="widgit scratchpad">
+        <div className="widgit-tall scratchpad">
             <EditorPad 
             langauge="javascript"
             displayName="Javascript"
@@ -19,6 +21,7 @@ const Editor = () => {
             onChange={setJavascript}
             srcDoc={srcDoc}
             />
+            <textarea type="text" placeholder="Plain Text..." className="plaintext-scratch"></textarea>
         </div>
     );
 };

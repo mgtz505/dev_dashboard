@@ -29,7 +29,7 @@ const EditorPad = (props) => {
             <div className="editor-container">
                 
                 <div className="banner-container">
-                    <h2>Javascript Scratchpad</h2>
+                    <h2>Scratchpad</h2>
                 </div>
                 <ControlledEditor
                 onBeforeChange={handleChange}
