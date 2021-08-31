@@ -13,17 +13,17 @@ const GitHub = () => {
     const [commits, setCommits] = useState([]);
     const octokit = new Octokit({auth: KEY });
 
-const description="Type in the name of one of your repo's names and see your ten most recent commits, including timestamps as well as a link to the commit on Github."
-const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by clicking 🔄", "The main text body will be your commit message"]
+const description="Type in the name of one of your repo's names and see your ten most recent commits, including timestamps as well as a link to the commit on Github.";
+const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by clicking 🔄", "The main text body will be your commit message"];
 
     useEffect(() => {
-        const owner = "mgtz505"
-        const repo = repoName
+        const owner = "mgtz505";
+        const repo = repoName;
         const perPage = 10;
         
         if(repoName && callAPI){
 
-            const fiveMostRecentCommits = octokit.request(
+            const tenMostRecentCommits = octokit.request(
                 `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
                 ).then((response) => {
                     setCommits(response.data);
@@ -31,16 +31,13 @@ const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by
                     setDisplayName(repoName);                    
                 });
         }
-    },[callAPI])
+    },[callAPI]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(!repoName)return
+        if(!repoName)return;
         setCallAPI(true);
-        
     }
-
-    console.log(displayName);
 
     return (
         <div className="widgit-tall GH-conditional">
@@ -57,8 +54,7 @@ const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by
                     placeholder="Type Repo Name..."
                     type="text"
                     value={repoName}
-                    onChange={(e => setRepoName(e.target.value))}
-                    >
+                    onChange={(e => setRepoName(e.target.value))}>
                     </input>
                 </form>
             </div>

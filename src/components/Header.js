@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <div>
             <nav className="nav-bar">
-                <Link className="link" to="/">Home</Link>
+                <Link className="link" to="/">Widget View</Link>
                 <Link className="link" to="/about">About This App</Link>
                 <Link className="link" to="/me">About Me</Link>
             </nav>

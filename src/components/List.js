@@ -36,8 +36,7 @@ const handleSubmit = (e) => {
                 type="text"
                 placeholder="New Task..."
                 value={value}
-                onChange={(e) => setValue(e.target.value)}
-                >
+                onChange={(e) => setValue(e.target.value)}>
                 </input>
             </form>
         </div>
@@ -48,7 +47,7 @@ const [todos, setTodos] = useState([]);
 const [count, setCount] = useState(0);
 const [displayIndex, setDisplayIndex] = useState(false);
 
-const description = "As simple as it gets: a handy list to help you tackle (and mark-off) today's tasks."
+const description = "As simple as it gets: a handy list to help you tackle (and mark-off) today's tasks.";
 const details = ["Click on the bold check mark to toggle an item on your list as complete", "Clicking on the trash bin will remove the task from the list", "You can apply numerical headers to your list by clicking the numbers button"];
 
 const addTodo = (text, isComplete = false) => {
@@ -60,20 +59,18 @@ const handleDelete = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index,1);
     setTodos(newTodos);
-    setCount(newTodos.length)
+    setCount(newTodos.length);
 }
 
 const handleComplete = (index) => {
-    console.log(index)
     const newTodos = [...todos];
     let target = newTodos[index];
-    console.log(target)
     if (target.isComplete === false) {
-        target.isComplete = true
+        target.isComplete = true;
     } else {
         if (target.isComplete === true) {
-            target.isComplete = false
-        }
+            target.isComplete = false;
+        };
     }
     setTodos(newTodos);
 }

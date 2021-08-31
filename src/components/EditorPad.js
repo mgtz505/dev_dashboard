@@ -25,9 +25,7 @@ const EditorPad = (props) => {
     return (
         <div >
             <ModalContainer title="JS Scratchpad" header="For all your code snippets" description={description} details={details}/>
-            
             <div className="editor-container">
-                
                 <div className="banner-container">
                     <h2>Scratchpad</h2>
                 </div>

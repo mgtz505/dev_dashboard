@@ -3,7 +3,6 @@ import "../styles/dropdown.css"
 
 const DropDown = ({ selectType }) => {
 
-    //State
     const [isActive, setIsActive] = useState(false);
     const onClick = () => setIsActive(!isActive);
     const dropDownRef = useRef(null);
@@ -19,13 +18,13 @@ const DropDown = ({ selectType }) => {
         };
         if (isActive) {
             window.addEventListener("click", pageClickEvent);
-        }
+        };
         return () => {
-            window.removeEventListener("click", pageClickEvent)
-        }
+            window.removeEventListener("click", pageClickEvent);
+        };
     }, [isActive])
 
-    const categories = ["Arts", "Automobiles", "Books", "Business", "Fashion", "Food", "Health", "Home", "Insider", "Magazine", "Movies", "Nyregion", "Obituaries", "Opinion","Politics", "Realestate", "Science", "Sports", "Sundayreview", "Technology", "Theater", "T-magazine", "Travel", "Upshot", "US", "World"]
+    const categories = ["Arts", "Automobiles", "Books", "Business", "Fashion", "Food", "Health", "Home", "Insider", "Magazine", "Movies", "Nyregion", "Obituaries", "Opinion","Politics", "Realestate", "Science", "Sports", "Sundayreview", "Technology", "Theater", "T-magazine", "Travel", "Upshot", "US", "World"];
     return (
         <div className="DropDown-MenuContainer">
             <button onClick={onClick} className="function-button-showNews">
@@ -43,7 +42,6 @@ const DropDown = ({ selectType }) => {
                     </li>
                         )
                     })}
-                   
                 </ul>
             </nav>
         </div>

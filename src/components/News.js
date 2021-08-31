@@ -5,23 +5,23 @@ import "../styles/news.css";
 import ModalContainer from "./ModalContainer";
 
 const News = () => {
-    //State
+
     const [stories, setStories] = useState([]);
     const [type, setType] = useState("");
     const selectType = (e) => setType(e.target.innerText);
     let selector = type.toLowerCase();
-  //Global Variables
+ 
+
   const KEY = process.env.REACT_APP_API_KEY;
   const URL = `https://api.nytimes.com/svc/topstories/v2/${selector}.json?api-key=${KEY}`;
 
-const description = "See today's top stories from the NYT. Click 📰 to see a list of news and entertainment categories for you to browse"
-const details = ["All content via the New York Times API", "Clicking a link will open a new broswer window", "Once your stories are displayed, click 🚫 to hide all displayed news stories"]
+const description = "See today's top stories from the NYT. Click 📰 to see a list of news and entertainment categories for you to browse";
+const details = ["All content via the New York Times API", "Clicking a link will open a new broswer window", "Once your stories are displayed, click 🚫 to hide all displayed news stories"];
 
   const getNews = () => {
     axios
       .get(URL)
       .then((response) => {
-        console.log(response.data.results);
         setStories(response.data.results);
       })
       .catch(console.error);

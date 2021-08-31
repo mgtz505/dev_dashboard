@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import axios from "axios";
-import "../styles/motivation.css"
+import "../styles/motivation.css";
 import ModalContainer from "./ModalContainer";
 
 const Motivation = () => {
@@ -11,8 +11,8 @@ const URL_PHOTO = "https://picsum.photos/300/200.jpg";
 const URL_QUOTE = "https://type.fit/api/quotes";
 
 
-const description = "Click the 🌟 to display a quote and photo pairing."
-const details = ["Quotes provided via type.fit; photos via picsum", "Bored of the current pairing? Click 🌟 again!"]
+const description = "Click the 🌟 to display a quote and photo pairing.";
+const details = ["Quotes provided via type.fit; photos via picsum", "Bored of the current pairing? Click 🌟 again!"];
 
 
 const handleRequest = useCallback(() => {
@@ -20,30 +20,26 @@ const handleRequest = useCallback(() => {
     getPhoto();
     setTimeout(() => {
     getQuote();
-    }, 500)
-}, [])
+    }, 500);
+}, []);
 
 const getPhoto = () => {
     axios.get(URL_PHOTO)
     .then((response) => {
-        console.log(response)
         setPhoto(response.config.url); 
     })
 }
 const getQuote = () => {
-    setQuote([])
+    setQuote([]);
     axios.get(URL_QUOTE)
     .then((response) => {
-        console.log(response)
-        let quoteArray = response.data
-        let randomNum = Math.floor(Math.random() * response.data.length)
-        let text = quoteArray[randomNum].text
-        let author = quoteArray[randomNum].author
+        let quoteArray = response.data;
+        let randomNum = Math.floor(Math.random() * response.data.length);
+        let text = quoteArray[randomNum].text;
+        let author = quoteArray[randomNum].author;
         setQuote([text,author]);
-    })
-}
-
-console.log(quote)
+    });
+};
 
     return (
         <div className="widgit">

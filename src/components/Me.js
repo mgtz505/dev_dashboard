@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/me.css";
 import "../styles/about.css";
-import nyc from "../styles/images/nyc.jpg"
+import nyc from "../styles/images/nyc.jpg";
 
 
 const Me = () => {
@@ -21,7 +21,6 @@ const Me = () => {
         <li>✔️ I'm looking to kickstart my SWE career in the NYC metro area, or perhaps working for a remote team</li>
         <li>✔️ I love to learn in public! Follow the link below to see what I've been working on</li>
         <a href="https://github.com/mgtz505" target="_blank" rel="noreferrer">My GitHub Profile</a>
-       
     </ul>
 </div>
 <img className="about-image" src={nyc} />  

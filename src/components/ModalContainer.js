@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import "../styles/modal.css"
+import "../styles/modal.css";
 
 const Modal = ({ title, header, description, details }) => {
     
     const [modal, setModal] = useState(false);
-    const Toggle = () => setModal(!modal)
+    const Toggle = () => setModal(!modal);
 
 
     return (
@@ -38,20 +38,5 @@ const Modal = ({ title, header, description, details }) => {
         </>
     )
 }
-
-
-
-// const ModalContainer = () => {
-
-//     const [modal, setModal] = useState(false);
-//     const Toggle = () => setModal(!modal)
-
-//     return (
-//         <div>
-//             <button className="function-button" onClick={() => Toggle()}>Display Modal</button>
-//             <Modal show={modal} close={Toggle} title="" description="" detail="" header=""/>
-//         </div>
-//     );
-// };
 
 export default Modal;

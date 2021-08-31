@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styles/reminder.css";
 
-const Reminder = ({date}) => {
+const Reminder = ({ date }) => {
     const [reminders, setReminders] = useState([]);
     const [value, setValue] = useState("");
 
@@ -37,14 +37,13 @@ return (
                 {reminders.map((reminder, index) => {
                     return (
                         <div className="reminder-container">
-                            <h4>{reminder.date}<h4>
-                            </h4>{reminder.text}</h4>
+                            <h4>{reminder.date}</h4>
+                            <h4>{reminder.text}</h4>
                             <button className="button-reminder" onClick={() => handleDelete(index)}>🗑</button> 
                         </div>
                     )
                 })}
             </div>
-        
         </>
     );
 };

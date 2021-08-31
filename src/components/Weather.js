@@ -13,8 +13,8 @@ const [city, setCity] = useState("");
 const [value, setValue] = useState("");
 const [callAPI, setCallAPI] = useState(false);
 
-const description = "Type in a city and see today's weather. You can also render a detailed three-day forecast"
-const details = ["Data provided via Wttr.in", "Be aware - some cities are currently not being served by the API", "Your local weather is the default! If you don't need to see the weather for another locale, no need to change anything."]
+const description = "Type in a city and see today's weather. You can also render a detailed three-day forecast";
+const details = ["Data provided via Wttr.in", "Be aware - some cities are currently not being served by the API", "Your local weather is the default! If you don't need to see the weather for another locale, no need to change anything."];
 
 
 useEffect(() => {
@@ -28,13 +28,12 @@ useEffect(() => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setCallAPI(true)
+        setCallAPI(true);
         setCity(value);
         setCallAPI(false);
         setSeeForecast(false);
     }
 
-console.log(weatherData)
 
     return (
         <div className="widgit-long">
@@ -104,7 +103,6 @@ console.log(weatherData)
                </>
            )
             : null}
-            {/* <button className="control-button" onClick={() => getWeather()}>Get Weather</button> */}
         </div>
     );
 };
