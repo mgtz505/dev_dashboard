@@ -13,7 +13,7 @@ const GitHub = () => {
     const [commits, setCommits] = useState([]);
     const octokit = new Octokit({auth: KEY });
 
-const description="Type in the name of one of your repo's names and see your ten most recent commits, including timestamps as well as a link to the commit on Github.";
+const description="Type in the name of one of your repos and see your ten most recent commits, including timestamps as well as a link to the commit on Github.";
 const details = ["Coming Soon: O-auth!", "Your list of repos can be refreshed by clicking 🔄", "The main text body will be your commit message"];
 
     useEffect(() => {
