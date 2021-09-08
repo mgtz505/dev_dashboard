@@ -1,4 +1,5 @@
 # Welcome to Dev Dashboard
+<img width="1410" alt="Screen Shot 2021-08-30 at 11 21 24 PM" src="https://user-images.githubusercontent.com/63027187/132532635-9a04cc83-0d92-445c-b1a1-6c1f21338939.png">
 
 Dev Dashboard is a productivity application to help developers stay focused while coding. I began building Dev Dashboard after reflecting on which "simple widgets" I used on a regular basis while programming (namely text editors, a reminder/to-do app and a pomodoro timer) and deciding that bundling these applications into a single web-app would make for a great project. It's been great to see my front end development skills evolve over the past several months, and while I know that I'll be making more projects soon, working on Dev Dashboard felt like a great measure of my progress. 
 
@@ -14,8 +15,18 @@ All widgets were effectively treated as indpendent apps, utilizing CSS modules f
 
 #### Incorporated APIs and Node Packages
  In addition to requesting data from various APIs, Dev Dashboard additionally relies upon several node packages, namely react-codemirror2 (used in Javascript Scratchpad) and react-calendar (used in the Reminder widget). I knew from the get-go that I wanted to incorporate GitHub's API in this project. I chose to build a commit tracker as this is the GH page I often find myself checking while working on a more extensive project. Should a user decided that they want to see a given commit's code changes, they can follow the provided link to their commit on GH. 
+ 
+ <img width="400" alt="Screen Shot 2021-08-28 at 1 09 39 PM" src="https://user-images.githubusercontent.com/63027187/132533691-293e4499-fee8-4539-a002-ac8fe1ee0176.png">
 
- I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then mapped. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
+
+ I had previous experience using the NYT API for a prior project [NYT Best-Sellers](https://github.com/mgtz505/nyt_bestsellers) and found it a lot of fun to work with. When I'm taking a work break I'm usually browsing the news, so this was a no-brainer API to integrate into my application. 
+ 
+ <img width="400" float="right" alt="Screen Shot 2021-08-28 at 1 04 00 PM" src="https://user-images.githubusercontent.com/63027187/132532736-9c0783c7-ce75-4e65-a997-638dee04030b.png">
+After a user selects a category of news via the dropdown menu, axios calls the API and returns an array of objects, each of which contains 25 stories which are then mapped. Working with this API was great and I can certainly see myself using this widget when I'm taking a break.
+ 
+
+
+ 
 
 #### A Brief Look at Some Interesting Code Snippets
 
